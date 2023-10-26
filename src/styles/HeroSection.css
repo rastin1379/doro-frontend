@@ -1,0 +1,79 @@
+.hero-section .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.hero-section {
+    background-image: url('../assets/mainBackground.svg');
+    background-size: 150% auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    height: 700px;
+    align-items: flex-end;
+    gap: 5%; /* Provides spacing between image+button and the text box */
+}
+
+.hero-section img {
+    width: 50%;
+    display: block;
+    position: absolute;
+    bottom: calc(10%);
+    left: calc(10%);
+}
+
+.start-session-btn {
+    position: absolute;
+    bottom: calc(63%);
+    left: 33%;
+    transform: translateX(-50%);
+    border: none;
+    background-color: rgba(128, 128, 128, 0.7);
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.859);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+
+.text-content {
+    position: absolute;
+    right: 10%;  /* Adjust the horizontal position */
+    bottom: 45%; /* Adjust the vertical position */
+    width: 30%;  /* Adjust the width of the text box */
+    z-index: 10; /* Ensure the text appears above other elements */
+    color:rgba(255, 255, 255, 0.859);
+}
+
+.text-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.text-content p {
+    font-size: 1rem;
+}
+
+.navbar {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: left;
+}
+
+.navbar img {
+    margin-left: -9%;
+}
+
+.navbar .MuiButton-root, .navbar .MuiTypography-root {
+    color: #fff; /* White text color */
+}
