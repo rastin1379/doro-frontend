@@ -1,7 +1,7 @@
 import React from 'react';
 import girlChattingImg from '../assets/girlChattingWithBot.svg';
 import Navbar from './Navbar';
-import '../styles/HeroSection.css'; // Importing the styles
+import '../styles/HeroSection.css';
 
 function HeroSection() {
   return (

@@ -6,14 +6,14 @@
 }
 
 .hero-section {
-    background-image: url('../assets/mainBackground.svg');
-    background-size: 150% auto;
+    background-image: url('../assets/homepage_top_background.svg');
+    background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: center top;
     display: flex;
     justify-content: flex-start;
     position: relative;
-    height: 700px;
+    height: 730px;
     align-items: flex-end;
     gap: 5%; /* Provides spacing between image+button and the text box */
 }
@@ -25,6 +25,21 @@
     bottom: calc(10%);
     left: calc(10%);
 }
+
+.svg-image1, .svg-image2 {
+    position: relative;
+    width: calc(100% + 90px); /* or whatever size you want */
+    z-index: 1; /* make sure it's below other content but above the background */
+}
+
+.svg-image1 {
+    top: 0%; /* adjust as needed */
+}
+
+.svg-image2 {
+    top: 70%; /* adjust as needed */
+}
+
 
 .start-session-btn {
     position: absolute;
@@ -77,3 +92,4 @@
 .navbar .MuiButton-root, .navbar .MuiTypography-root {
     color: #fff; /* White text color */
 }
+
