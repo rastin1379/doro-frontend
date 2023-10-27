@@ -40,6 +40,20 @@
     top: 70%; /* adjust as needed */
 }
 
+@keyframes pulsate {
+    0% {
+        box-shadow: 0 0 0 1px rgba(128, 128, 128, 1);
+    }
+    40% {
+        box-shadow: 0 0 0 8px rgba(128, 128, 128, 1);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(128, 128, 128, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 12px rgba(128, 128, 128, 0);
+    }
+}
 
 .start-session-btn {
     position: absolute;
@@ -47,14 +61,14 @@
     left: 33%;
     transform: translateX(-50%);
     border: none;
-    background-color: rgba(128, 128, 128, 0.7);
-    color: #fff;
+    background-color: #fff;
+    color: black;
     border-radius: 25px;
     cursor: pointer;
     padding: 10px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.859);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(128, 128, 128, 1);
     font-weight: bold;
+    animation: pulsate 1s infinite; /* This line adds the pulsating animation to the button */
 }
 
 
