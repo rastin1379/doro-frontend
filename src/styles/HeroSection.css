@@ -42,18 +42,29 @@
 
 @keyframes pulsate {
     0% {
-        box-shadow: 0 0 0 1px rgba(128, 128, 128, 1);
+        box-shadow: 0 0 0 1px #C9D4F8;
+    }
+    20% {
+        box-shadow: 0 0 0 4px #C9D4F8;
     }
     40% {
-        box-shadow: 0 0 0 8px rgba(128, 128, 128, 1);
+        box-shadow: 0 0 0 6px #C9D4F8;
     }
-    70% {
-        box-shadow: 0 0 0 10px rgba(128, 128, 128, 0.5);
+    60% {
+        box-shadow: 0 0 0 8px rgba(201, 212, 248, 0.6);
+    }
+    80% {
+        box-shadow: 0 0 0 10px rgba(201, 212, 248, 0.3);
+    }
+    90% {
+        box-shadow: 0 0 0 12px rgba(201, 212, 248, 0);
     }
     100% {
-        box-shadow: 0 0 0 12px rgba(128, 128, 128, 0);
+        box-shadow: 0 0 0 12px rgba(201, 212, 248, 0);
     }
 }
+
+
 
 .start-session-btn {
     position: absolute;
@@ -61,14 +72,15 @@
     left: 33%;
     transform: translateX(-50%);
     border: none;
-    background-color: #fff;
-    color: black;
+    background-color: #f2f6ff;
+    color: #728094;
     border-radius: 25px;
     cursor: pointer;
     padding: 10px 20px;
     border: 2px solid rgba(128, 128, 128, 1);
-    font-weight: bold;
-    animation: pulsate 1s infinite; /* This line adds the pulsating animation to the button */
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    animation: pulsate 1.5s ease-out infinite; /* This line adds the pulsating animation to the button */
 }
 
 

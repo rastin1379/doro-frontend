@@ -38,7 +38,7 @@ function Features() {
         <div style={featureContainerStyles}>
             {features.map((feature, index) => (
                 <Paper key={index} style={{...featureBoxStyles, ...feature.style}} elevation={3}>
-                    <Typography variant="h6" gutterBottom>
+                    <Typography variant="h6" gutterBottom style={{fontWeight: 'bold'}}>
                         {feature.title}
                     </Typography>
                     <img src={feature.img} alt={feature.title} style={featureBoxImgStyles} />

@@ -1,20 +1,32 @@
 export const questionnaireHeaderStyles = {
   position: 'relative',
   width: '100%',
-  height: '200px', // Adjust this based on your needs
+  height: '200px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  marginBottom: '40px'
 };
 
 export const headerStyles = {
-  position: 'absolute',  // Set to absolute
-  top: '50%',            // Center vertically
-  left: '50%',           // Center horizontally
-  transform: 'translate(-50%, -50%)',  // Ensure it's perfectly centered
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
   fontSize: '24px',
   fontWeight: 'bold',
-  color: 'black',        // Assuming the image is dark, so the text is white for visibility
+  color: 'black',
   textAlign: 'center',
-  zIndex: 2,             // Ensure it stays on top
+  zIndex: 2
+};
+
+// Styles for the card container:
+export const doroContainerStyles = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between', // Changed to space-between for equal spacing between cards
+  padding: '0 15px', // Small horizontal padding to prevent cards from touching the container's edges
+  gap: '10px',
+  maxWidth: '1200px',
+  margin: '0 auto'
 };

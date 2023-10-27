@@ -1,0 +1,79 @@
+.doro-card {
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 60px 40px;
+  width: 190px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  text-align: center;
+  padding-top: 20px; /* Adjusted padding to accommodate the semicircle */
+  background-color: #F2F6FF;
+  margin-top: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Semicircle styling on top */
+.doro-card::before {
+  content: var(--dynamic-title);
+  position: absolute;
+  top: -51px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 50px;
+  border-radius: 50px 50px 0 0;
+  background-color: #728094;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-bottom: none;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 40px;
+}
+
+.doro-card h3 {
+  display: none; /* We hide the original h3 as we're using the ::before pseudo-element for the semicircle */
+}
+
+.doro-card p {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.doro-info {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  bottom: 10px;
+}
+
+.doro-info span {
+  display: flex;
+  align-items: center;     /* Vertically align everything in the middle */
+  margin: 0;               /* Remove default margin */
+  padding: 0;              /* Remove default padding */
+  top: 0;           /* Adjust this value to shift content downwards */
+}
+
+.info-icon {
+  margin-right: 5px;       /* Adds some spacing between the icon and the text */
+  width: 16px;             /* Adjust width if needed */
+  height: auto;
+  vertical-align: middle;  /* Ensure the image is vertically centered with respect to the line height */
+}
+
+.doro-info span > * {
+  line-height: 1;          /* Adjust line-height of all children of the span, so icon and text align well */
+}
+
+.doro-info span:first-child {
+  margin-right: 10px;  /* Adjust this value to your preference */
+}
