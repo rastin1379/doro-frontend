@@ -5,7 +5,7 @@ export const questionnaireHeaderStyles = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  marginBottom: '40px'
+  marginBottom: '40px',
 };
 
 export const headerStyles = {
@@ -14,8 +14,8 @@ export const headerStyles = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   fontSize: '24px',
-  fontWeight: 'bold',
-  color: 'black',
+  fontWeight: '700',
+  color: '#728094',
   textAlign: 'center',
   zIndex: 2
 };

@@ -1,6 +1,7 @@
 export const missionStyles = {
   padding: '50px 10px',
   textAlign: 'center',
+  color: '#728094',
 };
 
 export const missionTitleStyles = {

@@ -44,6 +44,7 @@
 .doro-card p {
   font-size: 17px;
   margin-bottom: 10px;
+  color: #728094;
 }
 
 .doro-info {
@@ -53,6 +54,7 @@
   align-items: center;
   margin-top: auto;
   bottom: 10px;
+  color: #728094;
 }
 
 .doro-info span {

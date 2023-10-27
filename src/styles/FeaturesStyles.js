@@ -6,6 +6,7 @@ const baseFeatureStyles = {
   padding: '20px',
   margin: '10px 20px',  // Reduced margin for less space between boxes
   borderRadius: '15px',
+  color: '#728094',
 };
 
 export const feature1Styles = {
