@@ -13,17 +13,17 @@
     display: flex;
     justify-content: flex-start;
     position: relative;
-    height: 730px;
+    height: 100vh;
     align-items: flex-end;
     gap: 5%; /* Provides spacing between image+button and the text box */
 }
 
 .hero-section img {
-    width: 50%;
-    display: block;
+    width: 60%;
+    max-width: 600px; /* You can set a max-width if you don't want the image to be too big on large screens */
     position: absolute;
-    bottom: calc(10%);
-    left: calc(10%);
+    bottom: 20%;
+    left: 10%;
 }
 
 .svg-image1, .svg-image2 {
@@ -64,12 +64,10 @@
     }
 }
 
-
-
 .start-session-btn {
     position: absolute;
     bottom: calc(63%);
-    left: 33%;
+    left: 27%;
     transform: translateX(-50%);
     border: none;
     background-color: #f2f6ff;
@@ -86,7 +84,7 @@
 
 .text-content {
     position: absolute;
-    right: 10%;  /* Adjust the horizontal position */
+    right: 15%;  /* Adjust the horizontal position */
     bottom: 45%; /* Adjust the vertical position */
     width: 30%;  /* Adjust the width of the text box */
     z-index: 10; /* Ensure the text appears above other elements */
@@ -119,3 +117,4 @@
     color: #fff; /* White text color */
 }
 
+/* ... your existing styles ... */
