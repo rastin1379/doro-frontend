@@ -10,7 +10,6 @@ export const questionnaireHeaderStyles = {
 
 export const headerStyles = {
   position: 'absolute',
-  top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   fontSize: '24px',
@@ -30,3 +29,32 @@ export const doroContainerStyles = {
   maxWidth: '1200px',
   margin: '0 auto'
 };
+
+export const viewMoreButtonStyles = {
+  display: 'block',
+  margin: '30px auto',  // top and bottom margin is 20px, auto will center the button
+  padding: '10px 40px', // padding for the button
+  backgroundColor: '#fff', // example color, you can choose any
+  color: '#728094', // text color
+  border: '1px solid #728094',
+  borderRadius: '25px',
+  cursor: 'pointer',
+  fontSize: '16px',
+};
+
+export const getStartedButtonStyles = {
+  display: "block",
+  margin: "30px auto", // top and bottom margin is 20px, auto will center the button
+  marginTop: "3%",
+  marginBottom: "5%",
+  padding: "10px 40px", // padding for the button
+  backgroundColor: "#C9D4F84D", // example color, you can choose any
+  color: "#728093", // text color
+  border: "1px solid #FFFFFF",
+  borderRadius: "25px",
+  cursor: "pointer",
+  fontSize: "16px",
+  fontWeight: "600",
+  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)",
+};
+

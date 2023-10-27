@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import Features from './components/Features';
 import Mission from './components/Mission'
 import Questionnaires from './components/Questionnaires';
+import Footer from './components/Footer';
 // ... other imports
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Features />
       <Mission />
       <Questionnaires />
+      <Footer />
       {/* Add the other components here */}
     </div>
   );
