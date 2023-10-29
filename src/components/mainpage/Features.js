@@ -1,16 +1,16 @@
 import React from 'react';
 import { Paper, Typography } from '@mui/material';
-import sessionImg from '../assets/completeSession.svg';
-import resultsImg from '../assets/viewDetails.svg';
-import trackImg from '../assets/trackSessions.svg';
-import { 
-    feature1Styles, 
-    feature2Styles, 
-    feature3Styles, 
-    featureContainerStyles,
-    featureBoxStyles,
-    featureBoxImgStyles
-} from '../styles/FeaturesStyles';
+import sessionImg from '../../assets/completeSession.svg';
+import resultsImg from '../../assets/viewDetails.svg';
+import trackImg from '../../assets/trackSessions.svg';
+import {
+  feature1Styles,
+  feature2Styles,
+  feature3Styles,
+  featureContainerStyles,
+  featureBoxStyles,
+  featureBoxImgStyles,
+} from "../../styles/FeaturesStyles";
 
 function Features() {
     const features = [

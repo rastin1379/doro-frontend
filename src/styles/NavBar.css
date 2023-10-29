@@ -1,0 +1,12 @@
+.navbar {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: left;
+}
+
+.navbar .MuiButton-root, .navbar .MuiTypography-root {
+    color: #fff; /* White text color */
+}

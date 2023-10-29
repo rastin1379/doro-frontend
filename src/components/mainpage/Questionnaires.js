@@ -6,15 +6,15 @@ import {
   doroContainerStyles,
   viewMoreButtonStyles,
   getStartedButtonStyles
-} from "../styles/QuestionnaireStyles";
-import stylingImg from "../assets/curvesStyling.svg";
-import DoroCard from "./DoroCard";
+} from "../../styles/QuestionnaireStyles";
+import stylingImg from "../../assets/curvesStyling.svg";
+import DoroCard from "../DoroCard";
 import {
   feature1Styles,
   feature3Styles,
   featureContainerStyles,
   featureBoxStyles,
-} from "../styles/FeaturesStyles";
+} from "../../styles/FeaturesStyles";
 
 const Questionnaires = () => {
   const cardsData = [

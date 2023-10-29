@@ -100,21 +100,13 @@
     font-size: 1rem;
 }
 
-.navbar {
-    box-shadow: none !important;
-    background-color: transparent !important;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: left;
+.hero-section .navbar img {
+    position: absolute; /* Allow the image to be positioned based on the navbar */
+    top: 50%;           /* Center the image vertically in the navbar */
+    left: 20px;         /* Push the image a bit from the left edge for some spacing */
+    transform: translateY(-50%); /* Vertically center the image */
+    margin-left: 0;     /* Reset the margin to ensure it doesn't interfere */
 }
 
-.navbar img {
-    margin-left: -9%;
-}
-
-.navbar .MuiButton-root, .navbar .MuiTypography-root {
-    color: #fff; /* White text color */
-}
 
 /* ... your existing styles ... */

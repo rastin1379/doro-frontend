@@ -1,5 +1,5 @@
 import React from 'react';
-import { missionStyles, missionTitleStyles, missionContentStyles, missionButton } from '../styles/Mission';
+import { missionStyles, missionTitleStyles, missionContentStyles, missionButton } from '../../styles/Mission';
 
 const Mission = () => (
   <div style={missionStyles}>

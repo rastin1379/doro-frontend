@@ -1,0 +1,64 @@
+.resources-section .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.resources-section {
+    background-image: url('../assets/topSectionResources.svg');
+    background-size: 152% auto;
+    background-repeat: no-repeat;
+    background-position: center -15vh;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    height: 100vh;
+    align-items: flex-end;
+    gap: 5%; /* Provides spacing between image+button and the text box */
+}
+
+.text-content-resources {
+    position: absolute;
+    left: 15%;  /* Adjust the horizontal position */
+    bottom: 55%; /* Adjust the vertical position */
+    width: 40%;  /* Adjust the width of the text box */
+    z-index: 10; /* Ensure the text appears above other elements */
+    color:rgba(255, 255, 255, 0.859);
+    font-family: 'Inter', sans-serif;
+}
+
+.text-content-resources h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.text-content-resources p {
+    font-size: 1rem;
+}
+
+.resources-section .navbar img {
+    position: absolute; /* Allow the image to be positioned based on the navbar */
+    top: 50%;           /* Center the image vertically in the navbar */
+    left: 20px;         /* Push the image a bit from the left edge for some spacing */
+    transform: translateY(-50%); /* Vertically center the image */
+    margin-left: 0;     /* Reset the margin to ensure it doesn't interfere */
+}
+
+.resources-banner {
+    position: absolute;   /* To position based on the resources-section */
+    right: 0;             /* Anchors the image to the rightmost edge */
+    transform: translateY(-50%); /* This will ensure vertical centering */
+    
+    width: 30vw;          /* This makes the image's width responsive to the viewport's width */
+    max-width: 600px;     /* This ensures the image won't get too large */
+    min-width: 100px;     /* This ensures the image won't get too small */
+}
+
+/* Large laptops and desktops, typically screens over 1200px */
+@media screen and (min-width: 1201px) {
+    .resources-banner {
+        top: 42vh; 
+        width: 25vw; /* reduce the width for larger screens */
+    }
+}

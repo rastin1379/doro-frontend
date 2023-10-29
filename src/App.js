@@ -1,22 +1,21 @@
 import React from 'react';
 import './App.css';
-import HeroSection from './components/HeroSection';
-import Features from './components/Features';
-import Mission from './components/Mission'
-import Questionnaires from './components/Questionnaires';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import MainPage from "./components/mainpage/MainPage";
+import ResourcesPage from './components/resources/ResourcesPage'
 // ... other imports
 
 function App() {
   return (
-    <div className="App">
-      <HeroSection />
-      <Features />
-      <Mission />
-      <Questionnaires />
-      <Footer />
-      {/* Add the other components here */}
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />{" "}
+          {/* Other routes can be added here later */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
