@@ -23,10 +23,7 @@ function Navbar() {
         >
           Home
         </Button>
-        <Button
-          color="inherit"
-          style={{ marginRight: "5%" }}
-        >
+        <Button color="inherit" style={{ marginRight: "5%" }}>
           DORO Test
         </Button>
         <Button
@@ -41,6 +38,8 @@ function Navbar() {
           color="inherit"
           variant="outlined"
           style={{ borderRadius: "25px", marginRight: "5%" }}
+          component={Link}
+          to="/get-started"
         >
           Get Started
         </Button>
