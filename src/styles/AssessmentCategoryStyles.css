@@ -19,21 +19,21 @@
   max-height: 12%;
   object-fit: cover;
   margin: 0 auto;
-  margin-bottom: -4%;  /* Reduce this value to bring closer */
+  margin-bottom: -4%; /* Reduce this value to bring closer */
 }
 
 .cards-container {
   display: flex;
-  overflow-x: auto; 
-  gap: 2%; 
-  margin-top: -3%;  /* Adjust this value if needed */
+  overflow-x: auto;
+  gap: 2%;
+  margin-top: -3%; /* Adjust this value if needed */
 }
 
 .slider-controls {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1%; 
+  gap: 1%;
   margin-top: 2%;
 }
 
@@ -42,15 +42,15 @@
   justify-content: center;
   align-items: center;
   color: #728094;
-  background-color: #FFFFFF; /* Semi-transparent white background */
-  border-radius: 50px;  /* Rounded corners */
-  padding: 8px 32px;   /* Padding to space the text from the edges */
-  font-size: 1.5rem;   /* Font size, adjust as needed */
-  font-weight: 700;    /* Medium font weight */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
-  margin: -2% auto 2%;     /* Adjust the margin to position the label */
-  position: relative;  /* Needed for the z-index to work */
-  z-index: 1;          /* Ensure the label is above other elements */
+  background-color: #ffffff; /* Semi-transparent white background */
+  border-radius: 50px; /* Rounded corners */
+  padding: 8px 32px; /* Padding to space the text from the edges */
+  font-size: 1.5rem; /* Font size, adjust as needed */
+  font-weight: 700; /* Medium font weight */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: -2% auto 2%; /* Adjust the margin to position the label */
+  position: relative; /* Needed for the z-index to work */
+  z-index: 1; /* Ensure the label is above other elements */
   border: 2px solid #728094;
 }
 
@@ -68,11 +68,47 @@
   bottom: 5%;
   left: 30%;
   transform: translateX(-50%);
-  z-index: 0;              /* This ensures the image stays below other content */
+  z-index: 0; /* This ensures the image stays below other content */
   width: 80%;
 }
 
 /* Ensure other content overlays the line image */
-.banner, .label-container, .cards-container, .slider-controls {
+.banner,
+.label-container,
+.cards-container,
+.slider-controls {
   z-index: 1;
 }
+
+.search-category {
+  position: absolute;
+  top: -5vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 2;
+  background-color: #f2f6ff;
+  color: black;
+  border-radius: 90px;
+  border: 2px solid #f2f6ff;
+  width: 300px;
+  height: 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 18px; /* Increase font size of text inside the input */
+  padding-left: 16px; /* Padding on the left for text alignment */
+  line-height: 45px; /* To vertically center the text */
+  text-align: center;
+  background-image: url('../assets/icons/search.svg'); /* Add your path to the search icon */
+  background-repeat: no-repeat;
+  background-position: right 15px center; /* Position the icon */
+  background-size: 10% 50%;
+}
+
+/* Add a separate rule for the placeholder styling */
+.search-category::placeholder {
+  font-weight: normal;
+  opacity: 1;
+  color: #7d8496;
+  font-size: 15px;
+  text-align: center;
+}
+
