@@ -9,6 +9,11 @@ const AssessmentCategory = () => {
     <div className="categories-container">
       {categories.map((category, index) => (
         <div key={index} className="category-container">
+          <img
+            src={category.lineDecorImg}
+            className={index % 2 === 0 ? "line-image-right" : "line-image-left"}
+            alt=""
+          />
           {/* SVG Banner */}
           <img
             src={category.bannerSrc}

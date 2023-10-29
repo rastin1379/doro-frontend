@@ -1,3 +1,4 @@
+// BANNERS
 import AnxietyBanner from "../../assets/bannerImgs/Anxiety.svg";
 import HyperactivityBanner from "../../assets/bannerImgs/Hyperactivity.svg";
 import BipolarBanner from "../../assets/bannerImgs/Bipolar.svg"
@@ -9,10 +10,25 @@ import ObsessionBanner from "../../assets/bannerImgs/Obsession.svg";
 import TraumaBanner from "../../assets/bannerImgs/Trauma.svg";
 import PsychoticBanner from "../../assets/bannerImgs/psychotic.svg";
 
+// LINE DECOR
+import line1 from "../../assets/linesResources/line1.svg";
+import line2 from "../../assets/linesResources/line2.svg";
+import line3 from "../../assets/linesResources/line3.svg";
+import line4 from "../../assets/linesResources/line4.svg";
+import line5 from "../../assets/linesResources/line5.svg";
+import line6 from "../../assets/linesResources/line6.svg";
+import line7 from "../../assets/linesResources/line7.svg";
+import line8 from "../../assets/linesResources/line8.svg";
+import line9 from "../../assets/linesResources/line9.svg";
+import line10 from "../../assets/linesResources/line10.svg";
+import line11 from "../../assets/linesResources/line11.svg";
+import line12 from "../../assets/linesResources/line12.svg";
+
 
 const categories = [
   // Anxiety
   {
+    lineDecorImg: line1,
     bannerSrc: AnxietyBanner,
     bannerLabel: "Anxiety",
     assessments: [
@@ -48,6 +64,7 @@ const categories = [
   },
   // Attention-Deficit and Hyperactivity
   {
+    lineDecorImg: line2,
     bannerSrc: HyperactivityBanner,
     bannerLabel: "Attention-Deficit and Hyperactivity",
     assessments: [
@@ -83,6 +100,7 @@ const categories = [
   },
   // Bipolar and Mood
   {
+    lineDecorImg: line3,
     bannerSrc: BipolarBanner,
     bannerLabel: "Bipolar and Mood",
     assessments: [
@@ -118,6 +136,7 @@ const categories = [
   },
   // Sleeping
   {
+    lineDecorImg: line4,
     bannerSrc: SleepingBanner,
     bannerLabel: "Sleeping",
     assessments: [
@@ -153,6 +172,7 @@ const categories = [
   },
   // Eating
   {
+    lineDecorImg: line5,
     bannerSrc: EatingBanner,
     bannerLabel: "Eating",
     assessments: [
@@ -188,6 +208,7 @@ const categories = [
   },
   // Depression
   {
+    lineDecorImg: line6,
     bannerSrc: DepressionBanner,
     bannerLabel: "Depression",
     assessments: [
@@ -223,6 +244,7 @@ const categories = [
   },
   // Personality - NEED BANNER
   {
+    lineDecorImg: line7,
     bannerSrc: PsychoticBanner,
     bannerLabel: "Personality",
     assessments: [
@@ -258,6 +280,7 @@ const categories = [
   },
   // Autism - NEED BANNER
   {
+    lineDecorImg: line8,
     bannerSrc: PsychoticBanner,
     bannerLabel: "Autism",
     assessments: [
@@ -293,6 +316,7 @@ const categories = [
   },
   // Psychotic
   {
+    lineDecorImg: line9,
     bannerSrc: PsychoticBanner,
     bannerLabel: "Psychotic",
     assessments: [
@@ -328,6 +352,7 @@ const categories = [
   },
   // Trauma and Stress
   {
+    lineDecorImg: line10,
     bannerSrc: TraumaBanner,
     bannerLabel: "Trauma and Stress",
     assessments: [
@@ -363,6 +388,7 @@ const categories = [
   },
   // Preoccupation and Obsession
   {
+    lineDecorImg: line11,
     bannerSrc: ObsessionBanner,
     bannerLabel: "Preoccupation and Obsession",
     assessments: [
@@ -398,6 +424,7 @@ const categories = [
   },
   // Substance Abuse and Gambling
   {
+    lineDecorImg: line12,
     bannerSrc: GamblingBanner,
     bannerLabel: "Substance Abuse and Gambling",
     assessments: [

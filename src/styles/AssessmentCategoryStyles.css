@@ -4,12 +4,14 @@
   margin-top: -10%;
   gap: 4%;
   margin-bottom: 5%;
+  align-items: center;
 }
 
 .category-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .banner {
@@ -50,4 +52,27 @@
   position: relative;  /* Needed for the z-index to work */
   z-index: 1;          /* Ensure the label is above other elements */
   border: 2px solid #728094;
+}
+
+.line-image-right {
+  position: absolute;
+  top: 0;
+  left: 70%;
+  transform: translateX(-50%); /* This centers the image */
+  z-index: 0; /* This ensures the image stays below other content */
+  width: 80%; /* Adjust width as needed */
+}
+
+.line-image-left {
+  position: absolute;
+  bottom: 5%;
+  left: 30%;
+  transform: translateX(-50%);
+  z-index: 0;              /* This ensures the image stays below other content */
+  width: 80%;
+}
+
+/* Ensure other content overlays the line image */
+.banner, .label-container, .cards-container, .slider-controls {
+  z-index: 1;
 }
