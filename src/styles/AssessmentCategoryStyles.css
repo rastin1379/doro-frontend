@@ -1,0 +1,53 @@
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: -10%;
+  gap: 4%;
+  margin-bottom: 5%;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner {
+  width: 20%;
+  max-height: 12%;
+  object-fit: cover;
+  margin: 0 auto;
+  margin-bottom: -4%;  /* Reduce this value to bring closer */
+}
+
+.cards-container {
+  display: flex;
+  overflow-x: auto; 
+  gap: 2%; 
+  margin-top: -3%;  /* Adjust this value if needed */
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1%; 
+  margin-top: 2%;
+}
+
+.label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #728094;
+  background-color: #FFFFFF; /* Semi-transparent white background */
+  border-radius: 50px;  /* Rounded corners */
+  padding: 8px 32px;   /* Padding to space the text from the edges */
+  font-size: 1.5rem;   /* Font size, adjust as needed */
+  font-weight: 700;    /* Medium font weight */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+  margin: -2% auto 2%;     /* Adjust the margin to position the label */
+  position: relative;  /* Needed for the z-index to work */
+  z-index: 1;          /* Ensure the label is above other elements */
+  border: 2px solid #728094;
+}
