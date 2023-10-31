@@ -28,13 +28,13 @@
     position: absolute;
     bottom: 0;
     left: 10%;
-    width: 60%;
-    max-width: 650px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    width: 80%; /* To accommodate both the image and the input-section */
+    display: flex; /* To layout its children in a row */
+    justify-content: space-between;
+    align-items: flex-end; /* To align at the bottom */
     gap: 1rem;
 }
+
 
 .start-content img {
     width: 100%;
@@ -45,8 +45,7 @@
     position: absolute;
     bottom: 70%;
     left: 10%;
-    width: 80%;
-    max-width: 650px;
+    width: 40%;
     z-index: 10;
     color: rgb(255, 255, 255);
 }
@@ -68,6 +67,86 @@
     left: 20px;
     transform: translateY(-50%);
     margin-left: 0;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 35%; /* Adjust the width to fit the layout */
+    align-self: stretch; /* Makes the input section stretch to the height of start-content */
+    color: #ffffff;
+}
+
+.input-section label {
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+.input-section input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-button {
+    display: block;
+    margin: 1% auto 3%;
+    padding: 12px 80px;
+    background-color: transparent !important;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.google-signin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.google-signin::before,
+.google-signin::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #FFFFFF; /* Color of the line */
+    position: relative;
+}
+
+.google-signin::before {
+    margin-right: 10px;
+}
+
+.google-signin::after {
+    margin-left: 10px;
+}
+
+.join-discord {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.discord-icon {
+    height: 25px;
+    width: auto;
 }
 
 Footer {
