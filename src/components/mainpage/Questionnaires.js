@@ -1,11 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
+import { selectIsLoggedIn } from "../../store/slices/authSlice";
 import { Paper, Typography } from "@mui/material";
 import {
   questionnaireHeaderStyles,
   headerStyles,
   doroContainerStyles,
   viewMoreButtonStyles,
-  getStartedButtonStyles
+  getStartedButtonStyles,
 } from "../../styles/QuestionnaireStyles";
 import stylingImg from "../../assets/curvesStyling.svg";
 import DoroCard from "../DoroCard";
@@ -17,6 +21,8 @@ import {
 } from "../../styles/FeaturesStyles";
 
 const Questionnaires = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   const cardsData = [
     {
       title: "GAD-7",
@@ -137,7 +143,13 @@ const Questionnaires = () => {
       <h2 style={headerStyles} elevation={2}>
         Start your first session!
       </h2>
-      <button style={getStartedButtonStyles}>Get Started</button>
+      <Button
+        style={{...getStartedButtonStyles, textTransform: "none"}}
+        component={Link}
+        to={isLoggedIn ? "/doro-test-start" : "/get-started"}
+      >
+        Get Started
+      </Button>
     </div>
   );
 };

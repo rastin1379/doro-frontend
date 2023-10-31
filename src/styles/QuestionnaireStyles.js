@@ -43,6 +43,8 @@ export const viewMoreButtonStyles = {
 };
 
 export const getStartedButtonStyles = {
+  width: "14%",
+  textAlign: "center",
   display: "block",
   margin: "30px auto", // top and bottom margin is 20px, auto will center the button
   marginTop: "3%",
