@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import logoImage from "../assets/logo.svg";
 import "../styles/NavBar.css";
+import { useSelector } from "react-redux"; // Import useSelector
+import { selectIsLoggedIn } from "../store/slices/authSlice";
 
 function Navbar() {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  
   return (
     <AppBar position="static" elevation={1} className="navbar">
       <Toolbar>
@@ -23,7 +27,12 @@ function Navbar() {
         >
           Home
         </Button>
-        <Button color="inherit" style={{ marginRight: "5%" }}>
+        <Button
+          color="inherit"
+          style={{ marginRight: "5%" }}
+          component={Link}
+          to={isLoggedIn ? "/doro-test-start" : "/get-started"} // Add Link to DORO Test Chat
+        >
           DORO Test
         </Button>
         <Button
@@ -34,15 +43,28 @@ function Navbar() {
         >
           Resources
         </Button>
-        <Button
-          color="inherit"
-          variant="outlined"
-          style={{ borderRadius: "25px", marginRight: "5%" }}
-          component={Link}
-          to="/get-started"
-        >
-          Get Started
-        </Button>
+        {/* Conditionally render based on isLoggedIn */}
+        {isLoggedIn ? (
+          <Button
+            color="inherit"
+            variant="outlined"
+            style={{ borderRadius: "25px", marginRight: "5%" }}
+            component={Link}
+            to="/profile" // Link to the profile page
+          >
+            Profile
+          </Button>
+        ) : (
+          <Button
+            color="inherit"
+            variant="outlined"
+            style={{ borderRadius: "25px", marginRight: "5%" }}
+            component={Link}
+            to="/get-started"
+          >
+            Get Started
+          </Button>
+        )}
       </Toolbar>
     </AppBar>
   );
