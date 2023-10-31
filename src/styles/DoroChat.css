@@ -1,0 +1,23 @@
+.chat-wrapper {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.chat-section .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, #727B89, transparent) !important;
+}
+
+.chat-section {
+    background-color: #484F59;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    height: 100vh;
+    align-items: flex-end;
+    gap: 5%;
+}
