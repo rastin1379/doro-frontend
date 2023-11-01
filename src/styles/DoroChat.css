@@ -71,11 +71,28 @@
     color: #fff; /* White text */
     background-color: #ffffff33; /* Dark background */
     margin-bottom: 4em;
+    margin-right: 2%;
 }
 
 .chat-input input::placeholder {
   color: #fff; /* Placeholder text color */
   opacity: 1; /* Firefox requires this line to change opacity */
+}
+
+.chat-input button {
+  padding: 0.75em 2em; /* Horizontal padding 2em, Vertical padding 1em */
+  margin-left: 0.5em; /* Space between the input and the button */
+  border: none;
+  border-radius: 20px; /* Rounded corners for the button */
+  background-color: #D4DCE9; /* Button background color */
+  color: #484F59; /* Button text color */
+  cursor: pointer; /* Cursor to pointer to indicate it's clickable */
+  margin-bottom: 4em;
+}
+
+.chat-input button:hover {
+  background-color: #D4DCE9; /* Set this to the same color as the button's normal background color */
+  color: #484F59; /* Set this to the same color as the button's normal text color */
 }
 
 /* POPUP DISCLAIMER STYLING */

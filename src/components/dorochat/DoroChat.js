@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@mui/material";
 import Navbar from "../Navbar";
 import "../../styles/DoroChat.css";
 
@@ -91,6 +92,8 @@ function DoroChat() {
               }
             }}
           />
+          <Button>Send</Button>
+          <Button>End</Button>
         </div>
       </div>
     </>
