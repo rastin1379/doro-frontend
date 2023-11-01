@@ -1,23 +1,135 @@
 .chat-wrapper {
     position: relative;
-    height: 100vh;
-    overflow: hidden;
+    display: flex; /* Use flexbox to organize children */
+    flex-direction: column; /* Stack children vertically */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Hide overflow */
 }
 
-.chat-section .navbar {
-    position: absolute;
+.chat-wrapper .navbar {
+    position: fixed; /* Fixed position relative to the viewport */
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000; /* Ensures it stays above other content */
     background: linear-gradient(to bottom, #727B89, transparent) !important;
 }
 
 .chat-section {
+    flex-grow: 1;
+    overflow-y: auto;
     background-color: #484F59;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column; /* Stack messages vertically */
+    align-items: center; /* Center messages horizontally */
+    gap: 1%; /* Use percentage for gap */
+    padding: 5% 1% 0% 1%;
+    box-sizing: border-box; /* Border-box model for padding */
+    padding-top: 25%;
+}
+
+.chat-bubble {
+    max-width: 40%;
+    font-size: 1em; /* Use em for font size */
+    line-height: 1.4; /* Adjusted line height for readability */
     position: relative;
-    height: 100vh;
-    align-items: flex-end;
-    gap: 5%;
+    margin-bottom: -1%; /* Use percentage for spacing between messages */
+    padding: 1em; /* Use em for internal padding */
+    border-radius: 20px; /* Rounded corners for the bubble */
+    word-wrap: break-word; /* Break long unbroken strings of text */
+    overflow-wrap: break-word; /* Ensure words break properly to prevent overflow */
+    box-sizing: border-box; /* Include padding in the bubble's total width and height */
+}
+
+.chat-bubble.ai {
+    align-self: center;
+    margin-right: 30%;
+    color: #FFFFFFB2;
+}
+
+.chat-bubble.user {
+    align-self: center;
+    margin-left: 30%;
+    color: #FFFFFF;
+}
+
+.chat-input {
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Centers children vertically, if needed */
+    padding: 1em; /* Use em for padding */
+    background-color: #484F59;
+}
+
+
+.chat-input input {
+    border: none;
+    width: calc(50% - 2em); /* Adjust width to subtract padding */
+    padding: 1em; /* Use em for padding */
+    border-radius: 20px; /* Use pixels for border-radius */
+    outline: none; /* Remove focus outline */
+    color: #fff; /* White text */
+    background-color: #ffffff33; /* Dark background */
+    margin-bottom: 4em;
+}
+
+.chat-input input::placeholder {
+  color: #fff; /* Placeholder text color */
+  opacity: 1; /* Firefox requires this line to change opacity */
+}
+
+/* POPUP DISCLAIMER STYLING */
+
+/* Styles for the terms and conditions popup */
+.terms-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.terms-content {
+  background: #D4DCE9; /* White background */
+  padding: 30px; /* Increased padding */
+  border-radius: 20px; /* Larger border radius for rounded corners */
+  text-align: left;
+  width: 50%; /* Adjust based on your preference */
+  max-width: 800px; /* Adjust based on your preference */
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for popup */
+  overflow-y: auto; /* Add scrollbar if content is too tall */
+  max-height: 40vh; /* Set the maximum height relative to the viewport */
+  height: auto;
+}
+
+.terms-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #728094;
+}
+
+.terms-content p {
+  margin-bottom: 20px;
+  color: #728094;
+}
+
+.terms-content button {
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #728094;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+   box-shadow: 
+    0 15px 40px rgba(201, 212, 248, 0.5), /* Drop shadow */
+    inset 3px 1px 15px rgba(255, 255, 255, 0.5), /* Inner shadow - white */
+    inset 0 -3px 10px rgba(0, 0, 0, 0.37); /* Inner shadow - black */
 }
