@@ -1,0 +1,60 @@
+.profile-before-session {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure that content takes at least full viewport height */
+}
+
+.profile-before-session .navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(
+    to bottom,
+    rgba(114, 123, 137, 1) 0%,
+    rgba(114, 123, 137, 0) 100%
+  ) !important;
+}
+
+.profile-before-session .navbar img {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  margin-left: 0;
+}
+
+.profile-section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10%;
+}
+
+.user-info {
+  text-align: center;
+  color: #728094;
+}
+
+.user-avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.session-button {
+  background-color: #728094;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px 0;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.test-results {
+  width: 50%;
+  background-color: #f0f0f0;
+  padding: 20px;
+}

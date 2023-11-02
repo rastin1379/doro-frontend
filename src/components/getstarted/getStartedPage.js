@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login, selectIsLoggedIn } from "../../store/slices/authSlice";
+import { useNavigate } from "react-router-dom";
 import girlChattingImg from "../../assets/girlChattingWithBot.svg";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
@@ -10,16 +11,13 @@ import Discord from "../../assets/icons/discord.svg";
 function StartSection() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const navigate = useNavigate();
 
   // TO DO: For now, user is logged in when they click register, later add actual AUTH login.
   const handleRegisterClick = () => {
     dispatch(login());
+    navigate("/");
   };
-
-  // This useEffect will run whenever isLoggedIn changes
-  useEffect(() => {
-    console.log("isLoggedIn state:", isLoggedIn);
-  }, [isLoggedIn]);
 
   return (
     <div className="start-wrapper">

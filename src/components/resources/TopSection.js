@@ -7,7 +7,7 @@ function TopSection() {
   return (
     <div className="resources-section">
       <Navbar />
-      <img src={resourcesBanner} alt="Girl chatting with bot" className="resources-banner" />
+      <img src={resourcesBanner} alt="" className="resources-banner" />
       <div className="text-content-resources">
         <h1 style={{ fontWeight: "900" }}>How does it work?</h1>
         <p>
