@@ -1,7 +1,7 @@
 .profile-before-session {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure that content takes at least full viewport height */
+  min-height: 100vh; 
 }
 
 .profile-before-session .navbar {
@@ -20,9 +20,8 @@
 .profile-before-session .navbar img {
   position: absolute;
   top: 50%;
-  left: 20px;
+  left: 2vw; /* Updated from px to vw for responsiveness */
   transform: translateY(-50%);
-  margin-left: 0;
 }
 
 .profile-section {
@@ -30,31 +29,72 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10%;
+  padding-top: 5vh; /* Updated from px to vh for responsiveness */
 }
 
 .user-info {
+  margin-top: 7%;
   text-align: center;
   color: #728094;
 }
 
 .user-avatar {
-  width: 150px;
+  width: 20vw; /* Updated from px to vw for responsiveness */
+  max-width: 150px; /* Prevent the avatar from becoming too large */
   border-radius: 50%;
+}
+
+.session-button-box {
+  background-color: #D4DCE94D;
+  padding: 5%;
+  border-radius: 2vw;
+  margin: 1% auto; /* Centered with margin */
+  width: 50%;
+  height: 20vh;
+  display: flex;
+  justify-content: center; /* Centered content horizontally */
+  align-items: center; /* Centered content vertically */
+}
+
+.session-button-box, .test-results {
+  background-color: #f0f0f0;
+  border-radius: 2vw; /* Updated from px to vw for responsiveness */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5%; 
+  padding: 2%; /* Updated from px to % for responsiveness */
 }
 
 .session-button {
   background-color: #728094;
   color: white;
   border: none;
-  padding: 10px 20px;
-  margin: 20px 0;
+  border-radius: 2vw;
+  padding: 2%;
   cursor: pointer;
-  border-radius: 20px;
+  width: 35%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.test-results-container {
+  width: 55%;
+  margin: 0 auto; 
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5%; 
+}
+
+.test-results-container h2 {
+  text-align: center;
+  margin-bottom: 2%;
+  color: #728094;
 }
 
 .test-results {
-  width: 50%;
-  background-color: #f0f0f0;
-  padding: 20px;
+  background-color: #F2F6FF;
+  border-radius: 2vw; /* Updated from px to vw for responsiveness */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2%; /* Updated from px to % for responsiveness */
+  height: 100%;
 }

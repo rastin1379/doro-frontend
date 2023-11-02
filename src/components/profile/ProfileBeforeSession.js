@@ -12,20 +12,18 @@ function ProfileBeforeSession() {
 
         <div className="profile-section">
           <div className="user-info">
-            <img
-              src={avatar}
-              alt="User Avatar"
-              className="user-avatar"
-            />
+            <img src={avatar} alt="User Avatar" className="user-avatar" />
             <h1>Rastin Rassoli</h1>
             <p>Last Session with Doro</p>
           </div>
 
-          <button className="session-button">START YOUR FIRST SESSION</button>
+          <div className="session-button-box">
+            <button className="session-button">START YOUR FIRST SESSION</button>
+          </div>
 
-          <div className="test-results">
+          <div className="test-results-container">
             <h2>All Test Results</h2>
-            {/* Add test results here */}
+            <div className="test-results">{/* Add test results here */}</div>
           </div>
         </div>
       </div>
