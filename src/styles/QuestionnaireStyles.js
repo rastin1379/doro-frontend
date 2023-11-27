@@ -16,7 +16,8 @@ export const headerStyles = {
   fontWeight: '700',
   color: '#728094',
   textAlign: 'center',
-  zIndex: 2
+  zIndex: 2,
+  marginBottom: "-5%",
 };
 
 // Styles for the card container:

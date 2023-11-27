@@ -5,6 +5,7 @@
     justify-content: space-between;
     padding: 20px;
     align-items: left;
+    margin-top: -0.5%;
 }
 
 .navbar .MuiButton-root, .navbar .MuiTypography-root {

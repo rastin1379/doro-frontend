@@ -1,7 +1,6 @@
 .doro-card {
   position: relative;
-  border: 1px solid #e0e0e0;
-  border-radius: 16px;
+  border-radius: 25px;
   padding: 60px 40px;
   width: 190px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

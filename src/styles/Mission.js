@@ -13,10 +13,11 @@ export const missionTitleStyles = {
 
 export const missionContentStyles = {
   fontSize: '18px',
-  maxWidth: '800px',
+  maxWidth: '1100px',
   margin: '0 auto',
   marginBottom: '3%',
   lineHeight: '2',
+  textAlign: 'left',
 };
 
 export const missionButton = {
@@ -28,4 +29,6 @@ export const missionButton = {
   border: '1px solid rgba(255, 255, 255, 0.859)',
   boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   fontWeight: 'bold',
+  marginTop:'-1%',
+  marginBottom: '3%',
 };

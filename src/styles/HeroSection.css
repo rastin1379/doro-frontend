@@ -3,10 +3,14 @@
     top: 0;
     left: 0;
     right: 0;
+    height: 15%;
+    z-index: 1000; /* Ensures it stays above other content */
+    background: linear-gradient(to bottom, #727B89, transparent) !important;
 }
 
 .hero-section {
-    background-image: url('../assets/homepage_top_background.svg');
+    /*background-image: url('../assets/homepage_top_background.svg');*/
+    background-image: url('../assets/Group\ 26969.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center top;
@@ -22,7 +26,7 @@
     width: 60%;
     max-width: 600px; /* You can set a max-width if you don't want the image to be too big on large screens */
     position: absolute;
-    bottom: 20%;
+    bottom: 25%;
     right: 10%;
 }
 
@@ -66,7 +70,7 @@
 
 .start-session-btn {
     position: absolute;
-    bottom: calc(63%);
+    bottom: calc(67%);
     right: 23%;
     transform: translateX(-50%);
     border: none;
@@ -85,7 +89,7 @@
 .text-content {
     position: absolute;
     left: 15%;  /* Adjust the horizontal position */
-    bottom: 45%; /* Adjust the vertical position */
+    bottom: 47%; /* Adjust the vertical position */
     width: 30%;  /* Adjust the width of the text box */
     z-index: 10; /* Ensure the text appears above other elements */
     color:rgba(255, 255, 255, 0.859);

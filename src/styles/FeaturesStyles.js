@@ -5,7 +5,7 @@ const baseFeatureStyles = {
   alignItems: 'center',
   padding: '20px',
   margin: '10px 20px',  // Reduced margin for less space between boxes
-  borderRadius: '15px',
+  borderRadius: '25px',
   color: '#728094',
 };
 
@@ -33,7 +33,7 @@ export const featureContainerStyles = {
 export const featureBoxStyles = {
   width: '22%',  // Reduced width for smaller boxes
   backgroundColor: '#fff',
-  borderRadius: '20px',
+  borderRadius: '70px',
   boxShadow: '0 3px 6px rgba(0, 0, 0, 0.1)',
   textAlign: 'center',
   margin: '0 20px', // Added margin to control spacing between boxes

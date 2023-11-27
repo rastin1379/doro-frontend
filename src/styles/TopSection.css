@@ -22,7 +22,7 @@
     position: absolute;
     left: 15%;  /* Adjust the horizontal position */
     bottom: 55%; /* Adjust the vertical position */
-    width: 40%;  /* Adjust the width of the text box */
+    width: 50%;  /* Adjust the width of the text box */
     z-index: 10; /* Ensure the text appears above other elements */
     color:rgba(255, 255, 255, 0.859);
     font-family: 'Inter', sans-serif;
@@ -35,6 +35,7 @@
 
 .text-content-resources p {
     font-size: 1rem;
+    line-height: 2;
 }
 
 .resources-section .navbar img {

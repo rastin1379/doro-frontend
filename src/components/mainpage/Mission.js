@@ -17,11 +17,12 @@ function Mission() {
     <div style={missionStyles}>
       <h2 style={missionTitleStyles}>Our Mission</h2>
       <p style={missionContentStyles}>
-        Doro is our first product. It is a system for early psychological
-        intervention. Mental disorders manifest as a result of a combination of
-        our susceptibilities and environmental factors. By recognizing our
-        psychological vulnerabilities through Doro, we can act earlier to
-        prevent severe mental conditions.
+        Doro is engineered for early mental disorder intervention. Through
+        ongoing sessions, reliable questionnaires, and diligent state tracking,
+        it aspires to facilitate early intervention, aiding in the prevention of
+        full disorder manifestation or relapse. Doro's structured approach
+        fosters a proactive stance on mental health, aiming to mitigate
+        potential adversities before they escalate.
       </p>
       <Button
         style={{ ...missionButton, textTransform: "none" }}
