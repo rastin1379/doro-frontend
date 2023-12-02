@@ -5,7 +5,7 @@ export const missionStyles = {
 };
 
 export const missionTitleStyles = {
-  fontSize: '24px',
+  fontSize: '29px',
   fontWeight: 'bold',
   marginBottom: '4%',
   lineHeight: '0.5',

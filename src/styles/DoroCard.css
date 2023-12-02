@@ -1,18 +1,19 @@
 .doro-card {
   position: relative;
   border-radius: 25px;
-  padding: 50px 40px;
-  width: 190px;
+  padding: 10px 40px; /* Adjusted padding */
+  width: 190px; /* Reduced width */
+  height: 190px; /* Reduced height */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 10px;
   text-align: center;
-  padding-top: 20px; /* Adjusted padding to accommodate the semicircle */
   background-color: #F2F6FF;
-  margin-top: 7%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 10%;
 }
+
 
 /* Semicircle styling on top */
 .doro-card::before {
@@ -45,6 +46,8 @@
   margin-bottom: 10px;
   color: #728094;
   line-height: 2.0;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .doro-info {

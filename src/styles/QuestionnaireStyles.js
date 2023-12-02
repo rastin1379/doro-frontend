@@ -12,7 +12,7 @@ export const headerStyles = {
   position: 'absolute',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  fontSize: '24px',
+  fontSize: '29px',
   fontWeight: '700',
   color: '#728094',
   textAlign: 'center',

@@ -144,7 +144,7 @@ const Questionnaires = () => {
         Start your first session!
       </h2>
       <Button
-        style={{...getStartedButtonStyles, textTransform: "none"}}
+        style={{...getStartedButtonStyles, textTransform: "none", marginTop: "5%"}}
         component={Link}
         to={isLoggedIn ? "/doro-test-start" : "/get-started"}
       >
