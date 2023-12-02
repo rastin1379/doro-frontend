@@ -9,13 +9,15 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000; /* Ensures it stays above other content */
+    background: linear-gradient(to bottom, #727B89, transparent) !important;
 }
 
 .start-section {
-    background-image: url('../assets/background_get_started.svg');
+    background-image: url('../assets/background_get_started.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center top 40%;
     display: flex;
     justify-content: flex-start;
     position: relative;
@@ -25,29 +27,39 @@
 }
 
 .start-content {
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-    width: 80%; /* To accommodate both the image and the input-section */
-    display: flex; /* To layout its children in a row */
+    position: relative;
+    display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* To align at the bottom */
-    gap: 1rem;
+    align-items: flex-end;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 2rem;
+    flex-direction: column;
 }
 
+.image-container {
+    order: 2;
+    align-self: center;
+    margin-top: 20px;
+}
 
-.start-content img {
+.chatDoro {
     width: 100%;
     max-width: 650px;
+    position: absolute;
+    bottom: -10%; /* Adjust to move the image lower */
+    left: 3%;
 }
 
 .text-content-start {
-    position: absolute;
-    bottom: 70%;
-    left: 10%;
     width: 40%;
-    z-index: 10;
+    position: relative;
+    flex: 1;
     color: rgb(255, 255, 255);
+    order: 1;
+    margin-bottom: -5%;
+    margin-right: auto;
 }
 
 .text-content-start h1 {
@@ -57,27 +69,20 @@
 
 .text-content-start p {
     font-size: 1rem;
-    width: 100%;
-    line-height: 1.5;
-}
-
-.start-section .navbar img {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    margin-left: 0;
+    line-height: 2.0;
 }
 
 .input-section {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
     border-radius: 5px;
-    width: 35%; /* Adjust the width to fit the layout */
-    align-self: stretch; /* Makes the input section stretch to the height of start-content */
     color: #ffffff;
+    position: relative;
+    transform: translateY(-40%);
+    width: 40%;
 }
 
 .input-section label {
@@ -110,7 +115,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     width: 100%;
     text-align: center;
     font-size: 14px;
@@ -123,10 +127,8 @@
 .google-signin::before,
 .google-signin::after {
     content: '';
-    flex: 1;
     height: 1px;
-    background: #FFFFFF; /* Color of the line */
-    position: relative;
+    background: #FFFFFF;
 }
 
 .google-signin::before {
@@ -146,7 +148,6 @@
 
 .discord-icon {
     height: 25px;
-    width: auto;
 }
 
 Footer {
@@ -157,3 +158,6 @@ Footer {
     background: white;
     z-index: 2;
 }
+
+
+

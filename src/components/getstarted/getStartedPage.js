@@ -13,7 +13,6 @@ function StartSection() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
 
-  // TO DO: For now, user is logged in when they click register, later add actual AUTH login.
   const handleRegisterClick = () => {
     dispatch(login());
     navigate("/");
@@ -24,20 +23,28 @@ function StartSection() {
       <div className="start-section">
         <Navbar />
         <div className="start-content">
-          <div className="text-content-start">
-            <h1 style={{ fontWeight: "900" }}>Join the Journey</h1>
-            <p>
-              Discover a supportive space for self-awareness and early
-              intervention. Sign up to engage with Doro, access reliable
-              questionnaires, and track your mental state over time.
-            </p>
+          <div>
+            <div className="text-content-start">
+              <h1 style={{ fontWeight: "900" }}>Join the Journey</h1>
+              <p>
+                Discover a supportive space for self-awareness and early
+                intervention. Sign up to engage with Doro, access reliable
+                questionnaires, and track your mental state over time.
+              </p>
+            </div>
+            <div className="image-container">
+              <img
+                src={girlChattingImg}
+                alt="Girl chatting with bot"
+                className="chatDoro"
+              />
+            </div>
           </div>
-          <img src={girlChattingImg} alt="Girl chatting with bot" />
           <div className="input-section">
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" />
             <label htmlFor="email">Email</label>
             <input type="email" id="email" />
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" />
             <button className="register-button" onClick={handleRegisterClick}>
               REGISTER
             </button>

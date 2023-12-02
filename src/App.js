@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainPage from "./components/mainpage/MainPage";
 import ResourcesPage from './components/resources/ResourcesPage'
-import StartSection from './components/getstarted/GetStartedPage'
+import StartSection from './components/getstarted/GetStartedPage';
 import DoroChat from './components/dorochat/DoroChat';
 import ProfileBeforeSession from './components/profile/ProfileBeforeSession';
 import { Provider } from "react-redux";

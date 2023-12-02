@@ -1,7 +1,7 @@
 .doro-card {
   position: relative;
   border-radius: 25px;
-  padding: 60px 40px;
+  padding: 50px 40px;
   width: 190px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 10px;
@@ -44,6 +44,7 @@
   font-size: 17px;
   margin-bottom: 10px;
   color: #728094;
+  line-height: 2.0;
 }
 
 .doro-info {
@@ -62,6 +63,7 @@
   margin: 0;               /* Remove default margin */
   padding: 0;              /* Remove default padding */
   top: 0;           /* Adjust this value to shift content downwards */
+  margin-bottom: 5%;
 }
 
 .info-icon {
