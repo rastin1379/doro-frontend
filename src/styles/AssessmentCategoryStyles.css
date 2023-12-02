@@ -29,13 +29,6 @@
   margin-top: -3%; /* Adjust this value if needed */
 }
 
-.slider-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1%;
-  margin-top: 2%;
-}
 
 .label-container {
   display: flex;
@@ -57,19 +50,19 @@
 .line-image-right {
   position: absolute;
   top: 0;
-  left: 70%;
-  transform: translateX(-50%); /* This centers the image */
-  z-index: 0; /* This ensures the image stays below other content */
-  width: 80%; /* Adjust width as needed */
+  right: 0;
+  z-index: -1;
+  width: 80%;
 }
 
 .line-image-left {
   position: absolute;
-  bottom: 5%;
-  left: 30%;
   transform: translateX(-50%);
-  z-index: 0; /* This ensures the image stays below other content */
+  z-index: 0;
+  top: 0;
+  right: 0;
   width: 80%;
+  right: -1%;
 }
 
 /* Ensure other content overlays the line image */
@@ -103,12 +96,44 @@
   background-size: 10% 50%;
 }
 
-/* Add a separate rule for the placeholder styling */
 .search-category::placeholder {
   font-weight: normal;
   opacity: 1;
-  color: #7d8496;
+  color: #728094;
   font-size: 15px;
   text-align: center;
 }
 
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+  margin-top: 2%;
+  width: 80%; /* Adjust the width as needed */
+}
+
+.slider-dots {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.slider-dot {
+  width: 20px;
+  height: 20px;
+  background-color: #D4DCE9;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: #728094; /* Active dot color */
+}
+
+.control-text {
+  color: #728094;
+  padding-left: 5px;
+  padding-right: 5px;
+}
