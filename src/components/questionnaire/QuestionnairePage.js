@@ -92,7 +92,7 @@ const QuestionnairePage = () => {
         <button className="button">
           To gain access please have your first session with Doro
         </button>
-        <button className="session-button">START YOUR FIRST SESSION</button>
+        <button className="start-button">START YOUR FIRST SESSION</button>
       </div>
       <Footer />
     </div>

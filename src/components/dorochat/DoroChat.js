@@ -26,9 +26,8 @@ function DoroChat() {
         },
       ];
       if (updatedMessages.length > 4) {
-        // Adjust this number based on how many messages you want to display
-        updatedMessages.shift(); // Remove one message from the beginning
-        updatedMessages.shift(); // Remove one more message from the beginning
+        updatedMessages.shift();
+        updatedMessages.shift();
       }
       return updatedMessages;
     });
