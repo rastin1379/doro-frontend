@@ -6,6 +6,7 @@ import ResourcesPage from './components/resources/ResourcesPage'
 import StartSection from './components/getstarted/GetStartedPage';
 import DoroChat from './components/dorochat/DoroChat';
 import ProfileBeforeSession from './components/profile/ProfileBeforeSession';
+import QuestionnairePage from './components/questionnaire/QuestionnairePage'
 import { Provider } from "react-redux";
 import { store } from './store/store';
 
@@ -20,6 +21,10 @@ function App() {
             <Route path="/get-started" element={<StartSection />} />{" "}
             <Route path="/doro-test-start" element={<DoroChat />} />{" "}
             <Route path="/profile" element={<ProfileBeforeSession />} />{" "}
+            <Route
+              path="/questionnaire/:title"
+              element={<QuestionnairePage />}
+            />{" "}
             {/* Other routes can be added here later */}
           </Routes>
         </div>

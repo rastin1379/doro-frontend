@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header-section {
+  background-image: url("../assets/questionnairePageHeader.png");
+  background-size: 170% 100%;
+  background-repeat: no-repeat;
+  background-position: center -40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+.title-container {
+  padding-top: 5%; /* Space for the title below the navbar */
+  padding-bottom: 5%; /* Space above the questionnaire section */
+  width: 100%; /* Full width */
+  text-align: center; /* Center the title text */
+}
+
+.navbar {
+  width: 100%; /* Full width */
+  position: absolute; /* Fixed position relative to the viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, #727b89, transparent) !important;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.page-title {
+  color: #ffffff;
+  margin: 0;
+}
+
+.questionnaire-section {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  padding: 5%; /* Padding around the questionnaire box */
+  margin-top: -30%;
+}
+
+.questionnaire-box {
+  background-color: white;
+  padding: 1em;
+  border-radius: 10px; /* Smooth edges */
+  margin: 0 auto; /* Centered horizontally */
+  width: 50%; /* Adjust width as needed */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  display: flex;
+  border: 2px solid #d4dce9;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Ensure the contents inside the box are centered */
+  margin-bottom: 5%;
+}
+
+.basic-info-title {
+  text-align: center; /* Center the title text horizontally */
+  width: 100%; /* Ensure the title takes full width of its container */
+  color: #728094;
+}
+
+.questionnaire-content {
+  margin-bottom: 1em; /* Space between content */
+}
+
+.questionnaire-content p {
+  margin: 0.5em 0; /* Margin for top and bottom of paragraph */
+  line-height: 3;
+  color: #728094;
+}
+
+.questionnaire-content strong {
+  font-weight: 600; /* Making the labels bold */
+}
+
+.button {
+  background-color: #f2f6ff;
+  color: #728094;
+  border: none;
+  border-radius: 2vw;
+  padding: 1%;
+  cursor: pointer;
+  width: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Karla;
+  font-size: 15px;
+  font-weight: 800; /* This makes the text bold */
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.session-button {
+  background-color: #728094;
+  color: white;
+  border: none;
+  border-radius: 2vw;
+  padding: 1.25%;
+  cursor: pointer;
+  width: 20%; 
+  box-shadow: 
+    0px 15px 40px 0px #C9D4F880, /* Outer shadow */
+    3px 1px 15px 0px #FFFFFF80 inset, /* Inner top-right shadow */
+    0px -3px 10px 0px #0000005E inset; /* Inner bottom shadow */
+}
+
