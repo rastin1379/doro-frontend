@@ -1,7 +1,7 @@
 .doro-card {
   position: relative;
   border-radius: 25px;
-  padding: 10px 40px; /* Adjusted padding */
+  padding: 10px 30px; /* Adjusted padding */
   width: 190px; /* Reduced width */
   height: 190px; /* Reduced height */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -46,8 +46,13 @@
   margin-bottom: 10px;
   color: #728094;
   line-height: 2.0;
-  max-width: 100%;
-  margin: 0 auto;
+  padding: 0; /* No padding inside the <p> */
+  margin: 0 -1%; /* Negative margins to pull the content back into the center */
+  width: 115%; /* The element will overflow the container */
+  box-sizing: border-box;
+  position: relative; /* Relative positioning */
+  left: 50%; /* Move the starting point to the middle of the container */
+  transform: translateX(-50%); /* Pull back the element to the left by its own half width */
 }
 
 .doro-info {

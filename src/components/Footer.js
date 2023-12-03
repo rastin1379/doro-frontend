@@ -14,7 +14,7 @@ const Footer = () => {
             src={discordIcon}
             alt=""
             className="info-icon"
-            style={{ marginLeft: "9px"}}
+            style={{ marginLeft: "9px", width: "30px", height: "30px" }}
           />
         </h3>
       </div>

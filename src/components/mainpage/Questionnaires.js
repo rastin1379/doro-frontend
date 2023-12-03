@@ -130,8 +130,8 @@ const Questionnaires = () => {
           >
             <Typography
               style={{
-                textAlign: "left",
-                lineHeight: "2",
+                textAlign: "justify",
+                lineHeight: "2.0",
                 ...(index === 1 ? { paddingBottom: "40px" } : {}),
               }}
             >
@@ -144,7 +144,11 @@ const Questionnaires = () => {
         Start your first session!
       </h2>
       <Button
-        style={{...getStartedButtonStyles, textTransform: "none", marginTop: "5%"}}
+        style={{
+          ...getStartedButtonStyles,
+          textTransform: "none",
+          marginTop: "5%",
+        }}
         component={Link}
         to={isLoggedIn ? "/doro-test-start" : "/get-started"}
       >
