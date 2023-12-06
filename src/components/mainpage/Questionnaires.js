@@ -11,7 +11,7 @@ import {
   viewMoreButtonStyles,
   getStartedButtonStyles,
 } from "../../styles/QuestionnaireStyles";
-import stylingImg from "../../assets/curvesStyling.svg";
+import stylingImg from "../../assets/curvesStyling.png";
 import DoroCard from "../DoroCard";
 import {
   feature1Styles,

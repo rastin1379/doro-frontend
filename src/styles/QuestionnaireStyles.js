@@ -53,7 +53,6 @@ export const getStartedButtonStyles = {
   padding: "10px 40px", // padding for the button
   backgroundColor: "#C9D4F84D", // example color, you can choose any
   color: "#728093", // text color
-  border: "1px solid #FFFFFF",
   borderRadius: "25px",
   cursor: "pointer",
   fontSize: "16px",

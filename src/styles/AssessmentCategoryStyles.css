@@ -21,7 +21,7 @@
   max-height: 12%;
   object-fit: cover;
   margin: 0 auto;
-  margin-bottom: -4%; /* Reduce this value to bring closer */
+  margin-bottom: -4.5%; /* Reduce this value to bring closer */
 }
 
 .cards-container {
