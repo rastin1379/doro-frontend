@@ -12,7 +12,21 @@
   left: 0;
   right: 0;
   z-index: 1000; /* Ensures it stays above other content */
-  background: linear-gradient(to bottom, #727b89, transparent) !important;
+  background: linear-gradient(180deg, rgba(114, 123, 137, 0.9) 0%, rgba(114, 123, 137, 0.5) 67.77%, rgba(114, 123, 137, 0) 97.19%);
+
+}
+
+.animation-wrapper {
+    background-image: url('../assets/doro_chat_styling.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center bottom -100%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    height: 150vh;
+    z-index: -200;
+    background-color: #484f59;
 }
 
 .chat-section {

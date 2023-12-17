@@ -84,11 +84,11 @@
   z-index: 2;
   background-color: #f2f6ff;
   color: black;
-  border-radius: 90px;
+  text-decoration: solid;
   border: 2px solid #f2f6ff;
   width: 300px;
   height: 30px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.09);
   font-size: 18px; /* Increase font size of text inside the input */
   padding-left: 16px; /* Padding on the left for text alignment */
   line-height: 45px; /* To vertically center the text */
@@ -97,10 +97,12 @@
   background-repeat: no-repeat;
   background-position: right 15px center; /* Position the icon */
   background-size: 10% 50%;
+  border: none;
+  border-radius: 16px;
 }
 
 .search-category::placeholder {
-  font-weight: normal;
+  font-weight: 500;
   opacity: 1;
   color: #728094;
   font-size: 15px;

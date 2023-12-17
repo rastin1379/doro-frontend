@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../Navbar";
-import Footer from "../Footer"
+import Footer from "../Footer";
 import "../../styles/QuestionnairePage.css";
 
 const QuestionnairePage = () => {
@@ -28,8 +28,10 @@ const QuestionnairePage = () => {
         Authors:<strong> Simon Baron-Cohen </strong>
       </p>
       <p>
-        Reference: 
-        <strong> The Autism-Spectrum Quotient (AQ): Evidence from Asperger
+        Reference:
+        <strong>
+          {" "}
+          The Autism-Spectrum Quotient (AQ): Evidence from Asperger
           Syndrome/High-Functioning Autism, Males and Females, Scientists and
           Mathematicians (Baron-Cohen et al., 2001)
         </strong>
@@ -82,7 +84,7 @@ const QuestionnairePage = () => {
       <div className="header-section">
         <Navbar />
         <div className="title-container">
-          <h1 className="page-title">{title}</h1>
+          <h1 className="page-title">{title} Autism Spectrum Quotient</h1>
         </div>
       </div>
       <div className="questionnaire-section">

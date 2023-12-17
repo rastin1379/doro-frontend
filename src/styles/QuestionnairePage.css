@@ -7,7 +7,7 @@
 
 .header-section {
   background-image: url("../assets/questionnairePageHeader.png");
-  background-size: 170% 100%;
+  background-size: 170% 90%;
   background-repeat: no-repeat;
   background-position: center -40vh;
   display: flex;
@@ -18,9 +18,8 @@
 }
 
 .title-container {
-  padding-top: 5%; /* Space for the title below the navbar */
   padding-bottom: 5%; /* Space above the questionnaire section */
-  width: 100%; /* Full width */
+  width: 25%; /* Full width */
   text-align: center; /* Center the title text */
 }
 
@@ -46,7 +45,7 @@
   justify-content: center; /* Horizontally center the content */
   align-items: center; /* Vertically center the content */
   padding: 5%; /* Padding around the questionnaire box */
-  margin-top: -30%;
+  margin-top: -35%;
 }
 
 .questionnaire-box {

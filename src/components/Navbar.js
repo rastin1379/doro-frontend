@@ -21,7 +21,13 @@ function Navbar() {
         </Typography>
         <Button
           color="inherit"
-          style={{ marginRight: "5%" }}
+          sx={{
+            marginRight: "5%",
+            "&:hover": {
+              backgroundColor: "transparent", // Remove background color
+              color: "#CBD0DB", // Change text color
+            },
+          }}
           component={Link}
           to="/"
         >
@@ -58,7 +64,14 @@ function Navbar() {
           <Button
             color="inherit"
             variant="outlined"
-            style={{ borderRadius: "25px", marginRight: "5%" }}
+            sx={{
+              borderRadius: "25px",
+              marginRight: "5%",
+              "&:hover, &:active": {
+                backgroundColor: "transparent",
+                textColor: "#728094",
+              },
+            }}
             component={Link}
             to="/get-started"
           >

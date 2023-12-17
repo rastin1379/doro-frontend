@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import Navbar from "../Navbar";
 import "../../styles/DoroChat.css";
+import microphone_IMG from "../../assets/icons/microphone.png"
 
 function DoroChat() {
   const [messages, setMessages] = useState([
@@ -73,6 +74,7 @@ function DoroChat() {
       )}
       <div className={`chat-wrapper ${showTerms ? "blur" : ""}`}>
         <Navbar />
+        <div className="animation-wrapper"></div>
         <div className="chat-section">
           {messages.map((message) => (
             <div key={message.id} className={`chat-bubble ${message.sender}`}>
@@ -91,8 +93,10 @@ function DoroChat() {
               }
             }}
           />
-          <Button>Send</Button>
-          <Button>End</Button>
+          <Button style={{ padding: "10px 25px", marginRight: "1%" }}>
+            Send
+          </Button>
+          <Button style={{ padding: "10px 25px" }}>End</Button>
         </div>
       </div>
     </>
