@@ -23,7 +23,11 @@ function ProfileBeforeSession() {
 
           <div className="test-results-container">
             <h2>All Test Results</h2>
-            <div className="test-results">{/* Add test results here */}</div>
+            <div className="test-results">
+              <button className="session-button">
+                TAKE MENTAL HEALTH QUESTIONNAIRES
+              </button>
+            </div>
           </div>
         </div>
       </div>

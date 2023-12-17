@@ -56,6 +56,17 @@
   align-items: center; /* Centered content vertically */
 }
 
+.test-results {
+  background-color: #F2F6FF;
+  border-radius: 2vw; /* Updated from px to vw for responsiveness */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2%; /* Updated from px to % for responsiveness */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .session-button-box, .test-results {
   background-color: #f0f0f0;
   border-radius: 2vw; /* Updated from px to vw for responsiveness */
@@ -71,7 +82,8 @@
   border-radius: 2vw;
   padding: 2%;
   cursor: pointer;
-  width: 35%; 
+  width: auto;
+  display: inline-block;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -89,12 +101,4 @@
   text-align: center;
   margin-bottom: 2%;
   color: #728094;
-}
-
-.test-results {
-  background-color: #F2F6FF;
-  border-radius: 2vw; /* Updated from px to vw for responsiveness */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 2%; /* Updated from px to % for responsiveness */
-  height: 100%;
 }

@@ -60,6 +60,7 @@
   flex-direction: column; /* Stack children vertically */
   align-items: left; /* Ensure the contents inside the box are centered */
   margin-bottom: 5%;
+  z-index: 2;
 }
 
 .basic-info-title {
@@ -113,4 +114,106 @@
     3px 1px 15px 0px #FFFFFF80 inset, /* Inner top-right shadow */
     0px -3px 10px 0px #0000005E inset; /* Inner bottom shadow */
 }
+
+
+.take-test-card {
+  position: relative;
+  border-radius: 25px;
+  padding: 10px 30px; /* Adjusted padding */
+  width: 600px;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  text-align: center;
+  background-color: #F2F6FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10%;
+}
+
+/* Semicircle styling on top */
+.take-test-card::before {
+  content: var(--dynamic-title);
+  position: absolute;
+  top: -51px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 50px;
+  border-radius: 50px 50px 0 0;
+  background-color: #728094;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-bottom: none;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 40px;
+}
+
+.take-test-card h3 {
+  display: none; /* We hide the original h3 as we're using the ::before pseudo-element for the semicircle */
+}
+
+.take-test-card p {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: #728094;
+  line-height: 1.6; /* Normal line height for better readability */
+  padding: 0; /* No additional padding */
+  margin: 0; /* Remove any margins that may push the content outside the container */
+  width: auto; /* Default width to contain text within the parent */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+
+.question {
+  text-align: left;
+  justify-content: left;
+  margin-top: 5%;
+  margin-left: 2%;
+}
+
+.question label {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.question input[type="radio"] {
+  margin-right: 10px;
+}
+
+.question label span {
+  flex-grow: 1;
+  white-space: nowrap;
+}
+
+.styling-image-1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 150vh;
+    background-image: url('../assets/questionnaire/Questionnaire-1.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center 90%;
+}
+
+.styling-image-2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 150vh;
+    background-image: url('../assets/questionnaire/Questionnaire-2.png');
+    background-size: 250% auto;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    z-index: -2;
+}
+
 

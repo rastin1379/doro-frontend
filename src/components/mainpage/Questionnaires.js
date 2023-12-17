@@ -113,7 +113,14 @@ const Questionnaires = () => {
           />
         ))}
       </div>
-      <button style={viewMoreButtonStyles}>View More</button>
+      <button style={viewMoreButtonStyles}>
+        <Link
+          to="/resources"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          View More
+        </Link>
+      </button>
       <h2 style={headerStyles} elevation={2}>
         Doro enables ...
       </h2>
