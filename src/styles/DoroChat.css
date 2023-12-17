@@ -17,16 +17,14 @@
 }
 
 .animation-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 150vh;
     background-image: url('../assets/doro_chat_styling.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: center bottom -100%;
-    display: flex;
-    justify-content: flex-start;
-    position: relative;
-    height: 150vh;
-    z-index: -200;
-    background-color: #484f59;
+    background-position: center 10%;
 }
 
 .chat-section {
@@ -73,6 +71,7 @@
   align-items: center; /* Centers children vertically, if needed */
   padding: 1em; /* Use em for padding */
   background-color: #484f59;
+  z-index: 1000;
 }
 
 .chat-input input {
