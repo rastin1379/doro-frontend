@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
@@ -10,6 +10,7 @@ import {
   doroContainerStyles,
   viewMoreButtonStyles,
   getStartedButtonStyles,
+  getStartedButtonHoverStyle,
 } from "../../styles/QuestionnaireStyles";
 import stylingImg from "../../assets/curvesStyling.png";
 import DoroCard from "../DoroCard";
@@ -22,6 +23,7 @@ import {
 
 const Questionnaires = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const [hover, setHover] = useState(false);
 
   const cardsData = [
     {
@@ -153,9 +155,12 @@ const Questionnaires = () => {
       <Button
         style={{
           ...getStartedButtonStyles,
+          ...(hover ? getStartedButtonHoverStyle : {}),
           textTransform: "none",
           marginTop: "5%",
         }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
         component={Link}
         to={isLoggedIn ? "/doro-test-start" : "/get-started"}
       >

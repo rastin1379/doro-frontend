@@ -9,6 +9,8 @@ import DepressionBanner from "../../assets/bannerImgs/Depression.svg";
 import ObsessionBanner from "../../assets/bannerImgs/Obsession.svg";
 import TraumaBanner from "../../assets/bannerImgs/Trauma.svg";
 import PsychoticBanner from "../../assets/bannerImgs/psychotic.svg";
+import AutismBanner from "../../assets/bannerImgs/Autism.svg";
+import PersonalityBanner from "../../assets/bannerImgs/Personality.svg";
 
 // LINE DECOR
 import line1 from "../../assets/linesResources/line1.svg";
@@ -242,10 +244,10 @@ const categories = [
       },
     ],
   },
-  // Personality - NEED BANNER
+  // Personality
   {
     lineDecorImg: line7,
-    bannerSrc: PsychoticBanner,
+    bannerSrc: PersonalityBanner,
     bannerLabel: "Personality",
     assessments: [
       {
@@ -278,10 +280,10 @@ const categories = [
       },
     ],
   },
-  // Autism - NEED BANNER
+  // Autism
   {
     lineDecorImg: line8,
-    bannerSrc: PsychoticBanner,
+    bannerSrc: AutismBanner,
     bannerLabel: "Autism",
     assessments: [
       {

@@ -21,14 +21,22 @@ export const missionContentStyles = {
 };
 
 export const missionButton = {
-  backgroundColor: 'rgba(87, 103, 126, 0.7)',
-  color: '#fff',
-  borderRadius: '25px',
-  cursor: 'pointer',
-  padding: '10px 20px',
-  border: '1px solid rgba(255, 255, 255, 0.859)',
-  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-  fontWeight: 'bold',
-  marginTop:'-1%',
-  marginBottom: '3%',
+  backgroundColor: "#96A5BB",
+  color: "#fff",
+  borderRadius: "25px",
+  cursor: "pointer",
+  padding: "10px 20px",
+  border: "2px solid #96A5BB",
+  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  fontWeight: "bold",
+  marginTop: "-1%",
+  marginBottom: "3%",
+};
+
+export const missionButtonHover = {
+  backgroundColor: "transparent",
+  border: "2px solid #96A5BB",
+  boxShadow: "0 0 4px rgba(0, 0, 0, 0.1)",
+  color: "#96A5BB",
+  fontFamily: "Inter, sans-serif",
 };

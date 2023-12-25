@@ -47,7 +47,7 @@ function StartSection() {
       await createUserWithEmailAndPassword(auth, email, password);
       // Account created, user is signed in
       dispatch(login());
-      navigate("/");
+      navigate("/doro-test-start");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         // If the account already exists, try to sign in
@@ -55,7 +55,7 @@ function StartSection() {
           await signInWithEmailAndPassword(auth, email, password);
           // Signed in
           dispatch(login());
-          navigate("/");
+          navigate("/doro-test-start");
         } catch (signInError) {
           // Handle sign-in errors here
           alert("Error signing in: " + signInError.message);

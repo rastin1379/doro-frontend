@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
@@ -8,10 +8,12 @@ import {
   missionTitleStyles,
   missionContentStyles,
   missionButton,
+  missionButtonHover,
 } from "../../styles/Mission";
 
 function Mission() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const [hover, setHover] = useState(false);
 
   return (
     <div style={missionStyles}>
@@ -25,7 +27,13 @@ function Mission() {
         potential adversities before they escalate.
       </p>
       <Button
-        style={{ ...missionButton, textTransform: "none" }}
+        style={{
+          ...missionButton,
+          ...(hover ? missionButtonHover : {}),
+          textTransform: "none",
+        }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
         component={Link}
         to={isLoggedIn ? "/doro-test-start" : "/get-started"}
       >
