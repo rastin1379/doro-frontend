@@ -241,8 +241,6 @@ const QuestionnairePage = () => {
           className="take-test-card"
           style={{ "--dynamic-title": `"${title}"` }}
         >
-          {/* Leave the Hello and Description text as placeholders */}
-          <h3>Hello</h3>
           <p className="question">{questionsContent}</p>
         </div>
         <button className="start-button">SUBMIT</button>

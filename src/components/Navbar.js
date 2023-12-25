@@ -35,7 +35,13 @@ function Navbar() {
         </Button>
         <Button
           color="inherit"
-          style={{ marginRight: "5%" }}
+          sx={{
+            marginRight: "5%",
+            "&:hover": {
+              backgroundColor: "transparent", // Remove background color
+              color: "#CBD0DB", // Change text color
+            },
+          }}
           component={Link}
           to={isLoggedIn ? "/doro-test-start" : "/get-started"} // Add Link to DORO Test Chat
         >
@@ -43,7 +49,13 @@ function Navbar() {
         </Button>
         <Button
           color="inherit"
-          style={{ marginRight: "5%" }}
+          sx={{
+            marginRight: "5%",
+            "&:hover": {
+              backgroundColor: "transparent", // Remove background color
+              color: "#CBD0DB", // Change text color
+            },
+          }}
           component={Link}
           to="/resources"
         >
