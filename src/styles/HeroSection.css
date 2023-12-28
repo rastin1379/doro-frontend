@@ -71,15 +71,15 @@
 .start-session-btn {
     position: absolute;
     bottom: calc(67%);
-    right: 23%;
+    right: 21%;
     transform: translateX(-50%);
     border: none;
     background-color: #f2f6ff;
     color: #728094;
     border-radius: 25px;
     cursor: pointer;
-    padding: 10px 20px;
-    border: 2px solid rgba(128, 128, 128, 1);
+    padding: 10px 45px;
+    border: 3px solid #C9D4F8;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
     animation: pulsate 1.5s ease-out infinite; /* This line adds the pulsating animation to the button */
@@ -89,7 +89,7 @@
 .text-content {
     position: absolute;
     left: 15%;  /* Adjust the horizontal position */
-    bottom: 47%; /* Adjust the vertical position */
+    bottom: 45%; /* Adjust the vertical position */
     width: 30%;  /* Adjust the width of the text box */
     z-index: 10; /* Ensure the text appears above other elements */
     color:rgba(255, 255, 255, 0.859);
