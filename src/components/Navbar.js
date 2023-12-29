@@ -21,6 +21,7 @@ function Navbar() {
         </Typography>
         <Button
           color="inherit"
+          className="buttonStyle"
           sx={{
             marginRight: "5%",
             "&:hover": {
@@ -35,6 +36,7 @@ function Navbar() {
         </Button>
         <Button
           color="inherit"
+          className="buttonStyle"
           sx={{
             marginRight: "5%",
             "&:hover": {
@@ -49,6 +51,7 @@ function Navbar() {
         </Button>
         <Button
           color="inherit"
+          className="buttonStyle"
           sx={{
             marginRight: "5%",
             "&:hover": {
@@ -65,6 +68,7 @@ function Navbar() {
         {isLoggedIn ? (
           <Button
             color="inherit"
+            className="buttonStyle"
             variant="outlined"
             style={{ borderRadius: "25px", marginRight: "5%" }}
             component={Link}
@@ -73,22 +77,24 @@ function Navbar() {
             Profile
           </Button>
         ) : (
-          <Button
-            color="inherit"
-            variant="outlined"
-            sx={{
-              borderRadius: "25px",
-              marginRight: "5%",
-              "&:hover, &:active": {
-                backgroundColor: "transparent",
-                textColor: "#728094",
-              },
-            }}
-            component={Link}
-            to="/get-started"
-          >
-            Get Started
-          </Button>
+        <Button
+          color="inherit"
+          className="buttonStyle"
+          variant="outlined"
+          sx={{
+            borderRadius: "25px",
+            marginRight: "5%",
+            "&:hover, &:active": {
+              backgroundColor: "transparent !important", // Ensure this overrides any other styles
+              color: "#CBD0DB !important", // Correct property and ensure it takes precedence
+            },
+          }}
+          component={Link}
+          to="/get-started"
+        >
+          Get Started
+        </Button>
+
         )}
       </Toolbar>
     </AppBar>
