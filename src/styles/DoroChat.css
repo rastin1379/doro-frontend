@@ -21,27 +21,26 @@
   left: 0;
   right: 0;
   top: 0;
-  height: 150vh;
+  height: 60vh;
   overflow: hidden;
   background-image: url('../assets/doro_chat_styling.png');
   background-repeat: no-repeat;
   background-position: center 10%;
-  /* Start at the left, 10% from the top */
-  animation: slide 240s linear infinite, flip 90s linear infinite;
-  /* Apply the combined animation */
+  background-size: auto 50vh;
+  /* Adjust the height of the image */
+  animation: slide 380s linear infinite, flip 80s infinite;
   transform-origin: 5% 15%;
-  /* Flip around the horizontal midline */
 }
 
 @keyframes slide {
 
   0%,
   100% {
-    background-position: 0% 10%;
+    background-position: 5% 10%;
   }
 
   50% {
-    background-position: 100% 10%;
+    background-position: 95% 10%;
   }
 }
 
@@ -49,17 +48,17 @@
 
   0%,
   100% {
-    transform: rotateX(0deg);
+    transform: rotateX(0deg) rotateY(0deg);;
   }
 
   25%,
   75% {
-    transform: rotateX(70deg);
+    transform: rotateX(70deg) rotateY(7deg);;
   }
 
   50%,
   0% {
-    transform: rotateX(0deg);
+    transform: rotateX(0deg) rotateY(0deg);;
   }
 }
 
