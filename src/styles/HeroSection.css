@@ -82,9 +82,15 @@
     border: 3px solid #C9D4F8;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
-    animation: pulsate 1.5s ease-out infinite; /* This line adds the pulsating animation to the button */
+    animation: pulsate 1.5s ease-out infinite;
+    /* Adds the pulsating animation to the button */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+.start-session-btn:hover {
+    background-color: transparent;
+    color: #CBD0DB;
+}
 
 .text-content {
     position: absolute;

@@ -10,7 +10,7 @@ function HeroSection() {
       <img src={girlChattingImg} alt="Girl chatting with bot"/>
       <button className="start-session-btn">Get Started</button>
       <div className="text-content">
-        <h1 style={{fontWeight: '900'}}>The Sooner The Better</h1>
+        <h1 style={{fontWeight: '900', fontSize: '37px'}}>The Sooner The Better</h1>
         <p style={{fontSize: '17px'}}>Prevent manifestation of mental disorders by tracking your mental health vulnerabilities.</p>
       </div>
     </div>
