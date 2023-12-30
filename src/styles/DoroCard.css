@@ -65,10 +65,12 @@
 .doro-info {
   position: absolute;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: auto;
   bottom: 10px;
+  left: 0;
+  right: 0;
   color: #728094;
 }
 

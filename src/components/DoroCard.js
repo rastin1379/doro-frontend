@@ -23,11 +23,11 @@ const DoroCard = ({ title, description, questions, time }) => {
         <div className="doro-info">
           <span>
             {" "}
-            <img src={penImg} alt="" className="info-icon" /> 10 Questions{" "}
+            <img src={penImg} alt="" className="info-icon" /> {questions}{" "}
           </span>
           <span>
             {" "}
-            <img src={clockImg} alt="" className="info-icon" /> 10 min
+            <img src={clockImg} alt="" className="info-icon" /> {time}
           </span>
         </div>
       </div>

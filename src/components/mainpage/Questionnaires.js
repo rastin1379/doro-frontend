@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
@@ -24,64 +25,26 @@ import {
 const Questionnaires = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const [hover, setHover] = useState(false);
+  const [cardsData, setCardsData] = useState([]);
 
-  const cardsData = [
-    {
-      title: "GAD-7",
-      description:
-        "Measures anxiety severity to help detect generalized anxiety disorder",
-      questions: "10 Questions",
-      time: "10 min",
-    },
-    {
-      title: "PHQ-9",
-      description:
-        "Assesses depression severity to aid in identifying and diagnosing depressive disorders",
-      questions: "10 Questions",
-      time: "10 min",
-    },
-    {
-      title: "BDI-II",
-      description:
-        "Evaluates the severity of depression in individuals, aiding in diagnosis",
-      questions: "10 Questions",
-      time: "10 min",
-    },
-    {
-      title: "STAI",
-      description:
-        "Assesses anxiety levels distinguishing between state and trait anxiety",
-      questions: "10 Questions",
-      time: "10 min",
-    },
-    {
-      title: "ASRS",
-      description:
-        "Helps in identifying ADHD in adults with attention-related concerns",
-      questions: "10 Questions",
-      time: "10 min",
-    },
-    {
-      title: "OCI-R",
-      description:
-        "Measures symptoms of Obsessive-Compulsive Disorder for diagnosis aid",
-      questions: "10 Questions",
-      time: "10 min",
-    },
-    {
-      title: "PSS",
-      description:
-        "Evaluates perceived stress to understand coping with life demands",
-      questions: "10 Questions",
-      time: "10 min",
-    },
-    {
-      title: "IES-R",
-      description: "Assesses subjective distress caused by traumatic events",
-      questions: "10 Questions",
-      time: "10 min",
-    },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/ptests/");
+        const formattedData = response.data.slice(0, 8).map((item) => ({
+          title: item.abbreviation,
+          description: item.summary,
+          questions: `${item.statements} Questions`,
+          time: item.duration.replace("minutes", "min"),
+        }));
+        setCardsData(formattedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const enables = [
     {
