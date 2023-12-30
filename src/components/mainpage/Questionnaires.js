@@ -36,6 +36,7 @@ const Questionnaires = () => {
           description: item.summary,
           questions: `${item.statements} Questions`,
           time: item.duration.replace("minutes", "min"),
+          id: item.id,
         }));
         setCardsData(formattedData);
       } catch (error) {
@@ -75,6 +76,7 @@ const Questionnaires = () => {
             description={card.description}
             questions={card.questions}
             time={card.time}
+            id={card.id}
           />
         ))}
       </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import penImg from '../assets/icons/pen.svg'
 import clockImg from '../assets/icons/clock.svg'
 
-const DoroCard = ({ title, description, questions, time }) => {
+const DoroCard = ({ title, description, questions, time, id}) => {
 
     const linkStyle = {
       textDecoration: "none",
