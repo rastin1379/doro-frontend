@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import Navbar from "../Navbar";
 import "../../styles/DoroChat.css";
-import microphone_IMG from "../../assets/icons/microphone.png"
 
 function DoroChat() {
   const [messages, setMessages] = useState([
