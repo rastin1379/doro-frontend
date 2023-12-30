@@ -161,15 +161,37 @@
 
 .terms-content {
   background: #d4dce9; /* White background */
-  padding: 30px; /* Increased padding */
+  padding: 40px 15px 40px 40px; /* Increased padding */
   border-radius: 20px; /* Larger border radius for rounded corners */
   text-align: left;
-  width: 50%; /* Adjust based on your preference */
+  width: 45%; /* Adjust based on your preference */
   max-width: 800px; /* Adjust based on your preference */
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for popup */
   overflow-y: auto; /* Add scrollbar if content is too tall */
   max-height: 40vh; /* Set the maximum height relative to the viewport */
   height: auto;
+}
+
+.scroll-wrapper {
+  max-height: 40vh;
+  /* Set the maximum height for scrolling */
+  overflow-y: scroll;
+  /* Add scrollbar to this wrapper */
+  box-sizing: border-box;
+  /* Include padding in the element's total width */
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: #728094;
+  border-radius: 10px;
+}
+
+.scroll-wrapper::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .terms-content h2 {

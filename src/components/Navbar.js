@@ -70,7 +70,14 @@ function Navbar() {
             color="inherit"
             className="buttonStyle"
             variant="outlined"
-            style={{ borderRadius: "25px", marginRight: "5%" }}
+            sx={{
+              borderRadius: "25px",
+              marginRight: "5%",
+              "&:hover, &:active": {
+                backgroundColor: "transparent !important", // Ensure this overrides any other styles
+                color: "#CBD0DB !important", // Correct property and ensure it takes precedence
+              },
+            }}
             component={Link}
             to="/profile" // Link to the profile page
           >
