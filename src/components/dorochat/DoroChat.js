@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import Navbar from "../Navbar";
 import "../../styles/DoroChat.css";
@@ -13,8 +13,46 @@ function DoroChat() {
     // Add more messages here as needed
   ]);
   const [showTerms, setShowTerms] = useState(true); // State to control the visibility of the terms popup
+  const [websocket, setWebsocket] = useState(null);
+
+  useEffect(() => {
+    const ws = new WebSocket(
+      "wss://doro-backend-qqemuil3zq-uc.a.run.app/chat/ws"
+    );
+
+    ws.onopen = () => {
+      console.log("WebSocket Connected");
+    };
+
+    ws.onmessage = (event) => {
+      console.log("Message from server: ", event.data);
+    };
+
+    ws.onerror = (event) => {
+      console.error("WebSocket Error event: ", event);
+    };
+
+    ws.onclose = (event) => {
+      console.log("WebSocket Disconnected: ", event.reason, event.code);
+    };
+
+    setWebsocket(ws);
+
+    return () => {
+      if (ws) {
+        ws.close();
+      }
+    };
+  }, []);
+
 
   const handleSendMessage = (newMessage) => {
+    if (websocket && websocket.readyState === WebSocket.OPEN) {
+      websocket.send(newMessage);
+    } else {
+      console.log("WebSocket not connected");
+    }
+
     setMessages((prevMessages) => {
       let updatedMessages = [
         ...prevMessages,
@@ -41,36 +79,35 @@ function DoroChat() {
     <>
       {showTerms && (
         <div className="terms-popup">
-            <div className="terms-content">
-              <h2>Disclaimer</h2>
-              <p>
-                Doro is designed to provide supportive dialogues and access to
-                validated mental health questionnaires, fostering a proactive
-                approach towards mental health awareness. However, it is not a
-                substitute for professional medical advice, diagnosis, or
-                treatment. The information and resources provided by Doro should
-                not be used as a basis for making diagnostic or treatment
-                decisions.
-              </p>
-              <p>
-                If you or someone you know are in crisis or think you may have
-                an emergency, please use the emergency call button on this page.
-                It's imperative to consult with a qualified healthcare provider
-                or mental health professional for personalized advice and
-                treatment.
-              </p>
-              <p>
-                Please note, the current version of Doro is intended for
-                individuals 18 years of age or older.
-              </p>
-              <p>
-                At its core, Doro's sole aspiration is to pave the way for early
-                intervention in psychological well-being, nurturing a journey
-                towards self-awareness and proactive mental health care.
-              </p>
-              <button onClick={handleAgree}>I AGREE</button>
-            </div>
+          <div className="terms-content">
+            <h2>Disclaimer</h2>
+            <p>
+              Doro is designed to provide supportive dialogues and access to
+              validated mental health questionnaires, fostering a proactive
+              approach towards mental health awareness. However, it is not a
+              substitute for professional medical advice, diagnosis, or
+              treatment. The information and resources provided by Doro should
+              not be used as a basis for making diagnostic or treatment
+              decisions.
+            </p>
+            <p>
+              If you or someone you know are in crisis or think you may have an
+              emergency, please use the emergency call button on this page. It's
+              imperative to consult with a qualified healthcare provider or
+              mental health professional for personalized advice and treatment.
+            </p>
+            <p>
+              Please note, the current version of Doro is intended for
+              individuals 18 years of age or older.
+            </p>
+            <p>
+              At its core, Doro's sole aspiration is to pave the way for early
+              intervention in psychological well-being, nurturing a journey
+              towards self-awareness and proactive mental health care.
+            </p>
+            <button onClick={handleAgree}>I AGREE</button>
           </div>
+        </div>
       )}
       <div className={`chat-wrapper ${showTerms ? "blur" : ""}`}>
         <Navbar />

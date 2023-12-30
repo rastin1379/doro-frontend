@@ -1,12 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import "../../styles/QuestionnairePage.css";
 
 const QuestionnairePage = () => {
-  const { title } = useParams();
+  const { title, id } = useParams();
+  const [questionnaire, setQuestionnaire] = useState(null);
   const [answers, setAnswers] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`/ptests/${id}/info`);
+        setQuestionnaire(response.data);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    };
+
+    fetchData();
+  }, [id]);
 
   const handleOptionChange = (questionId, answer) => {
     setAnswers((prevAnswers) => ({
@@ -24,38 +39,27 @@ const QuestionnairePage = () => {
     </div>
   );
 
-  const basicInfoContent = (
+  const basicInfoContent = questionnaire ? (
     <>
       <p>
-        Statements:<strong> 50 </strong>
+        Statements:<strong> {questionnaire.statements} </strong>
       </p>
       <p>
-        Duration:<strong> 5-10 minutes </strong>
+        Duration:<strong> {questionnaire.duration} </strong>
       </p>
       <p>
-        Authors:<strong> Simon Baron-Cohen </strong>
+        Authors:<strong> {questionnaire.authors} </strong>
       </p>
       <p>
         Description:
-        <strong>
-          {" "}
-          The National Stressful Events Survey Acute Stress Disorder Short Scale
-          (NSESSS) is a 7-item measure that assesses the severity of symptoms of
-          acute stress disorder in individuals aged 18 and older following an
-          extremely stressful event or experience.
-        </strong>
+        <strong> {questionnaire.description}</strong>
       </p>
       <p>
         Reference:
-        <strong>
-          {" "}
-          The Autism-Spectrum Quotient (AQ): Evidence from Asperger
-          Syndrome/High-Functioning Autism, Males and Females, Scientists and
-          Mathematicians (Baron-Cohen et al., 2001)
-        </strong>
+        <strong> {questionnaire.reference}</strong>
       </p>
     </>
-  );
+  ) : null;
 
   const instructionContent = (
     <>
@@ -200,7 +204,6 @@ const QuestionnairePage = () => {
     },
   ];
 
-
   const questionsContent = questionData.map((question) => (
     <div className="question" key={question.id}>
       <p>{question.text}</p>
@@ -224,7 +227,10 @@ const QuestionnairePage = () => {
       <div className="header-section">
         <Navbar />
         <div className="title-container">
-          <h1 className="page-title">{title} Autism Spectrum Quotient</h1>
+          {/* Conditional rendering to ensure questionnaire is not null */}
+          {questionnaire && (
+            <h1 className="page-title">{questionnaire.name}</h1>
+          )}
         </div>
       </div>
       <div className="styling-image-1"></div>

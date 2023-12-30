@@ -13,7 +13,7 @@ const DoroCard = ({ title, description, questions, time, id}) => {
 
   return (
     <Link
-      to={`/questionnaire/${encodeURIComponent(title)}`}
+      to={`/questionnaire/${encodeURIComponent(title)}/${encodeURIComponent(id)}`}
       className="doro-card-link"
       style={linkStyle}
     >

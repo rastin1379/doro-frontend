@@ -22,7 +22,7 @@ function App() {
             <Route path="/doro-test-start" element={<DoroChat />} />{" "}
             <Route path="/profile" element={<ProfileBeforeSession />} />{" "}
             <Route
-              path="/questionnaire/:title"
+              path="/questionnaire/:title/:id"
               element={<QuestionnairePage />}
             />{" "}
             {/* Other routes can be added here later */}
