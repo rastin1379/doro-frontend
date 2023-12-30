@@ -17,14 +17,49 @@
 }
 
 .animation-wrapper {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 150vh;
-    background-image: url('../assets/doro_chat_styling.png');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: center 10%;
+  position: absolute;
+  left: 0;
+  right: -5%;
+  top: 0;
+  height: 80vh;
+  overflow: hidden;
+  background-image: url('../assets/doro_chat_styling.png');
+  background-repeat: no-repeat;
+  background-position: center 10%;
+  background-size: auto 40vh;
+  /* Adjust the height of the image */
+  animation: slide 400s infinite, flip 90s infinite;
+  transform-origin: 5% 15%;
+}
+
+@keyframes slide {
+
+  0%,
+  100% {
+    background-position: 0% 10%;
+  }
+
+  50% {
+    background-position: 100% 10%;
+  }
+}
+
+@keyframes flip {
+
+  0%,
+  100% {
+    transform: rotateX(0deg) rotateY(-9deg);;
+  }
+
+  25%,
+  75% {
+    transform: rotateX(60deg) rotateY(7deg);;
+  }
+
+  50%,
+  0% {
+    transform: rotateX(0deg) rotateY(-9deg);;
+  }
 }
 
 .chat-section {

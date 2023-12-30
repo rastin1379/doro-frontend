@@ -11,3 +11,8 @@
 .navbar .MuiButton-root, .navbar .MuiTypography-root {
     color: #fff; /* White text color */
 }
+
+/* Hide the ripple effect (specific to Material-UI buttons) */
+.buttonStyle .MuiTouchRipple-root {
+    display: none;
+}

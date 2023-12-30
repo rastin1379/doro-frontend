@@ -44,20 +44,20 @@ export const viewMoreButtonStyles = {
 };
 
 export const getStartedButtonStyles = {
-  width: "14%",
+  width: "10%",
   textAlign: "center",
   display: "block",
   margin: "30px auto", // top and bottom margin is 20px, auto will center the button
   marginTop: "3%",
   marginBottom: "5%",
-  padding: "10px 40px", // padding for the button
+  padding: "10px 30px", // padding for the button
   backgroundColor: "#C9D4F84D",
   color: "#728093", // text color
   borderRadius: "25px",
   cursor: "pointer",
   fontSize: "16px",
   fontWeight: "600",
-  border: "1px solid white",
+  border: "1px solid transparent",
   boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)",
 };
 

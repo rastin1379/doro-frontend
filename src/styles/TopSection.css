@@ -21,7 +21,7 @@
 .text-content-resources {
     position: absolute;
     left: 15%;  /* Adjust the horizontal position */
-    bottom: 55%; /* Adjust the vertical position */
+    bottom: 50%; /* Adjust the vertical position */
     width: 50%;  /* Adjust the width of the text box */
     z-index: 10; /* Ensure the text appears above other elements */
     color:rgba(255, 255, 255, 0.859);
