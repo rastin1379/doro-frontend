@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import Navbar from "../Navbar";
+import { useSelector } from "react-redux";
+import { selectAuthToken } from "../../store/slices/authSlice";
 import "../../styles/DoroChat.css";
 
 function DoroChat() {
@@ -13,8 +15,48 @@ function DoroChat() {
     // Add more messages here as needed
   ]);
   const [showTerms, setShowTerms] = useState(true); // State to control the visibility of the terms popup
+  const [websocket, setWebsocket] = useState(null);
+  const token = useSelector(selectAuthToken);
+
+  useEffect(() => {
+    const ws = new WebSocket(
+      "wss://doro-backend-qqemuil3zq-uc.a.run.app/chat/ws"
+    );
+
+    ws.onopen = () => {
+      console.log("WebSocket Connected");
+      ws.send(JSON.stringify({ token }));
+    };
+
+    ws.onmessage = (event) => {
+      console.log("Message from server: ", event.data);
+    };
+
+    ws.onerror = (error) => {
+      console.error("WebSocket Error: ", error);
+    };
+
+    ws.onclose = (event) => {
+      console.log("WebSocket Disconnected: ", event.reason, event.code);
+    };
+
+    setWebsocket(ws);
+
+    return () => {
+      if (ws) {
+        ws.close();
+      }
+    };
+  }, [token]);
 
   const handleSendMessage = (newMessage) => {
+    if (websocket && websocket.readyState === WebSocket.OPEN) {
+      websocket.send(newMessage);
+      console.log("Message sent:", newMessage);
+    } else {
+      console.log("WebSocket not connected");
+    }
+
     setMessages((prevMessages) => {
       let updatedMessages = [
         ...prevMessages,

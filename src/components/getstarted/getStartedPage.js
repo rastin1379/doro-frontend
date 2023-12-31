@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../../store/slices/authSlice";
+import { login, fetchToken } from "../../store/slices/authSlice";
 import { useNavigate } from "react-router-dom";
 import {
   getAuth,
@@ -47,6 +47,7 @@ function StartSection() {
       await createUserWithEmailAndPassword(auth, email, password);
       // Account created, user is signed in
       dispatch(login());
+      dispatch(fetchToken());
       navigate("/doro-test-start");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
@@ -55,6 +56,7 @@ function StartSection() {
           await signInWithEmailAndPassword(auth, email, password);
           // Signed in
           dispatch(login());
+          dispatch(fetchToken());
           navigate("/doro-test-start");
         } catch (signInError) {
           // Handle sign-in errors here
