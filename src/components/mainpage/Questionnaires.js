@@ -50,12 +50,12 @@ const Questionnaires = () => {
   const enables = [
     {
       description:
-        "Doro allows you to identify potential mental health vulnerabilities through a structured conversation. The subsequent recommendations for official mental health questionnaires provide a pathway for you to take informed actions, such as seeking professional advice, based on credible sources.",
+        "Doro enables early identification and management of potential mental health vulnerabilities through structured conversations and psychoeducation. Alongside guiding you through official mental health questionnaires, it provides a comprehensive pathway to prevent full manifestation and manage relapse, empowering you with information and strategies based on credible sources.",
       style: feature1Styles,
     },
     {
       description:
-        "Doro offers mental health practitioners an initial screening tool to better understand their clients' potential vulnerabilities, gaining additional data points for more comprehensive analysis and treatment planning by directing clients to established questionnaires.",
+        "Doro provides practitioners with a tool for enhanced client monitoring and relapse detection, serving as an initial screening aid to identify vulnerabilities. Facilitating ongoing support and informed re-engagement, its integration during and post-therapy offers additional layers of understanding and tailored intervention, ensuring a proactive approach to each client's journey.",
       style: feature3Styles,
     },
   ];
@@ -98,7 +98,7 @@ const Questionnaires = () => {
             style={{
               ...featureBoxStyles,
               ...enable.style,
-              width: "30%",
+              width: "31%",
             }}
             elevation={3}
           >
@@ -106,7 +106,7 @@ const Questionnaires = () => {
               style={{
                 textAlign: "justify",
                 lineHeight: "2.0",
-                ...(index === 1 ? { paddingBottom: "40px" } : {}),
+                padding: "8px 20px 8px 20px",
               }}
             >
               {enable.description}
@@ -114,7 +114,7 @@ const Questionnaires = () => {
           </Paper>
         ))}
       </div>
-      <h2 style={headerStyles} elevation={2}>
+      <h2 style={{ ...headerStyles, textShadow: '2px 2px 4px rgba(0,0,0,0.16)'}} elevation={2}>
         Start your first session!
       </h2>
       <Button
@@ -122,7 +122,7 @@ const Questionnaires = () => {
           ...getStartedButtonStyles,
           ...(hover ? getStartedButtonHoverStyle : {}),
           textTransform: "none",
-          marginTop: "5%",
+          marginTop: "4%",
         }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}

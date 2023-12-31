@@ -95,8 +95,8 @@
 .text-content {
     position: absolute;
     left: 15%;  /* Adjust the horizontal position */
-    bottom: 45%; /* Adjust the vertical position */
-    width: 30%;  /* Adjust the width of the text box */
+    bottom: 46%; /* Adjust the vertical position */
+    width: 27%;  /* Adjust the width of the text box */
     z-index: 10; /* Ensure the text appears above other elements */
     color:rgba(255, 255, 255, 0.859);
 }

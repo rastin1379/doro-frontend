@@ -11,7 +11,7 @@ function HeroSection() {
       <button className="start-session-btn">Get Started</button>
       <div className="text-content">
         <h1 style={{fontWeight: '900', fontSize: '37px'}}>The Sooner The Better</h1>
-        <p style={{fontSize: '17px'}}>Prevent manifestation of mental disorders by tracking your mental health vulnerabilities.</p>
+        <p style={{fontSize: '18px'}}>Prevent the manifestation of mental health conditions with early detection and intervention</p>
       </div>
     </div>
   );
