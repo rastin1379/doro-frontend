@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import Navbar from "../Navbar";
-import { useSelector } from "react-redux";
-import { selectAuthToken } from "../../store/slices/authSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchToken, selectAuthToken } from "../../store/slices/authSlice";
 import "../../styles/DoroChat.css";
 
 function DoroChat() {
@@ -14,40 +14,68 @@ function DoroChat() {
     },
     // Add more messages here as needed
   ]);
+  const dispatch = useDispatch();
   const [showTerms, setShowTerms] = useState(true); // State to control the visibility of the terms popup
   const [websocket, setWebsocket] = useState(null);
+  const [incomingMessage, setIncomingMessage] = useState("");
+  const [messageTimeout, setMessageTimeout] = useState(null);
+
   const token = useSelector(selectAuthToken);
 
   useEffect(() => {
-    const ws = new WebSocket(
-      "wss://doro-backend-qqemuil3zq-uc.a.run.app/chat/ws"
-    );
+    dispatch(fetchToken());
+  }, [dispatch]);
 
-    ws.onopen = () => {
-      console.log("WebSocket Connected");
-      ws.send(JSON.stringify({ token }));
-    };
+  useEffect(() => {
+    // Check if the token is available
+    console.log(token);
+    if (token) {
+      const ws = new WebSocket(
+        `wss://doro-backend-qqemuil3zq-uc.a.run.app/chat/ws?token=${token}`
+      );
 
-    ws.onmessage = (event) => {
-      console.log("Message from server: ", event.data);
-    };
+      ws.onopen = () => {
+        console.log("WebSocket Connected");
+      };
 
-    ws.onerror = (error) => {
-      console.error("WebSocket Error: ", error);
-    };
+      ws.onmessage = (event) => {
+        console.log("Message from server: ", event.data);
 
-    ws.onclose = (event) => {
-      console.log("WebSocket Disconnected: ", event.reason, event.code);
-    };
+        clearTimeout(messageTimeout); // Clear the existing timeout
 
-    setWebsocket(ws);
+        const updatedMessage = incomingMessage + event.data;
+        setIncomingMessage(updatedMessage);
 
-    return () => {
-      if (ws) {
-        ws.close();
-      }
-    };
-  }, [token]);
+        // Set a timeout to wait for more parts of the message
+        const timeout = setTimeout(() => {
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { id: Date.now(), text: updatedMessage, sender: "ai" },
+          ]);
+          setIncomingMessage(""); // Reset for next message
+        }, 1000); // Adjust the delay as needed
+
+        setMessageTimeout(timeout);
+      };
+
+      ws.onerror = (error) => {
+        console.error("WebSocket Error: ", error);
+      };
+
+      ws.onclose = (event) => {
+        console.log("WebSocket Disconnected: ", event.reason, event.code);
+      };
+
+      setWebsocket(ws);
+
+      // Clean up function
+      return () => {
+        if (ws) {
+          ws.close();
+        }
+      };
+    }
+  }, [token, incomingMessage, messageTimeout]);
 
   const handleSendMessage = (newMessage) => {
     if (websocket && websocket.readyState === WebSocket.OPEN) {
@@ -61,11 +89,6 @@ function DoroChat() {
       let updatedMessages = [
         ...prevMessages,
         { id: Date.now(), text: newMessage, sender: "user" },
-        {
-          id: Date.now() + 1,
-          text: "Hey Rastin! How have you been since our last session?",
-          sender: "ai",
-        },
       ];
       if (updatedMessages.length > 4) {
         updatedMessages.shift();
