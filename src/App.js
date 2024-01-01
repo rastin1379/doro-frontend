@@ -3,10 +3,10 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainPage from "./components/mainpage/MainPage";
 import ResourcesPage from './components/resources/ResourcesPage'
-import StartSection from './components/getstarted/GetStartedPage';
+import StartSection from './components/getstarted/getStartedPage';
 import DoroChat from './components/dorochat/DoroChat';
 import ProfileBeforeSession from './components/profile/ProfileBeforeSession';
-import QuestionnairePage from './components/questionnaire/QuestionnairePage'
+import QuestionnairePage from './components/questionnaire/QuestionnairePage';
 import { Provider } from "react-redux";
 import { store } from './store/store';
 
