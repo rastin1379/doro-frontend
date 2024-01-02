@@ -111,6 +111,14 @@
     cursor: pointer;
     font-size: 14px;
     margin-right: 35%;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.register-button:hover{
+    background-color: white !important;
+    font-weight: 600;
+    border: 1px solid #768093 ;
+    color: #768093;
 }
 
 .google-signin {

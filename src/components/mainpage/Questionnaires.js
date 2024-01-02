@@ -10,6 +10,7 @@ import {
   headerStyles,
   doroContainerStyles,
   viewMoreButtonStyles,
+  viewButtonHover,
   getStartedButtonStyles,
   getStartedButtonHoverStyle,
 } from "../../styles/QuestionnaireStyles";
@@ -25,6 +26,7 @@ import {
 const Questionnaires = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const [hover, setHover] = useState(false);
+  const [viewHover,setViewHover] = useState(false);
   const [cardsData, setCardsData] = useState([]);
 
   useEffect(() => {
@@ -80,7 +82,16 @@ const Questionnaires = () => {
           />
         ))}
       </div>
-      <button style={viewMoreButtonStyles}>
+      <button 
+        style={{
+          ...viewMoreButtonStyles,
+          ...(viewHover ? viewButtonHover : {}),
+          textTransform: "none",
+        }}
+        onMouseEnter={() => setViewHover(true)}
+        onMouseLeave={() => setViewHover(false)}
+        component={Link}
+      >
         <Link
           to="/resources"
           style={{ textDecoration: "none", color: "inherit" }}

@@ -41,10 +41,17 @@ export const viewMoreButtonStyles = {
   borderRadius: '25px',
   cursor: 'pointer',
   fontSize: '16px',
+  transition: 'background-color 0.5s ease, color 0.5s ease',
 };
 
+export const viewButtonHover = {
+  backgroundColor: "rgb(150, 165, 187)",
+  border: "1px solid #FFFFFF",
+  color: "#FFFFFF",
+}
+
 export const getStartedButtonStyles = {
-  width: "10%",
+  width: "14%",
   textAlign: "center",
   display: "block",
   margin: "30px auto", // top and bottom margin is 20px, auto will center the button
