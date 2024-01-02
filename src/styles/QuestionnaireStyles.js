@@ -41,14 +41,13 @@ export const viewMoreButtonStyles = {
   borderRadius: '25px',
   cursor: 'pointer',
   fontSize: '16px',
+  transition: 'background-color 0.8s ease, color 0.5s ease',
 };
 
 export const viewButtonHover = {
   backgroundColor: "rgb(150, 165, 187)",
-  border: "2px solid #FFFFFF",
-  boxShadow: "0 0 4px rgba(0, 0, 0, 0.1)",
+  border: "1px solid #FFFFFF",
   color: "#FFFFFF",
-  fontFamily: "Inter, sans-serif",
 }
 
 export const getStartedButtonStyles = {

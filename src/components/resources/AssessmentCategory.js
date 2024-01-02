@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import DoroCard from "../DoroCard";
 import "../../styles/AssessmentCategoryStyles.css";
-import { Button } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 // BANNERS
@@ -39,14 +39,17 @@ const AssessmentCategory = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const categoryRefs = useRef([]);
   const [activeCategory, setActiveCategory] = useState(0);
+  const [loading, setLoading] = useState(false);
   
   useEffect(() => {
     const fetchCategories = async () => {
       try {
+        setLoading(true)
         const response = await axios.get("/ptests/");
         const data = response.data;
         const formattedCategories = formatCategories(data);
         setCategories(formattedCategories);
+        setLoading(false)
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
@@ -163,7 +166,14 @@ const AssessmentCategory = () => {
     }));
   };
 return (
-  <div style={{ position: "relative" }}>
+  <>
+  {
+    loading ? 
+    <div style={{ display: "flex", justifyContent: "center",marginBottom:"340px"}}>
+      <CircularProgress sx={{color:"#768094"}} />
+    </div>
+     : (
+      <div style={{ position: "relative" }}>
     {/* Search Bar */}
     <input
       placeholder="SEARCH"
@@ -259,6 +269,10 @@ return (
       })}
     </div>
   </div>
+    )
+  }
+  </>
+  
 );
 
 };
