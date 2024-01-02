@@ -111,7 +111,7 @@
     cursor: pointer;
     font-size: 14px;
     margin-right: 35%;
-    transition: background-color 0.8s ease, color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .register-button:hover{

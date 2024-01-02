@@ -41,7 +41,7 @@ export const viewMoreButtonStyles = {
   borderRadius: '25px',
   cursor: 'pointer',
   fontSize: '16px',
-  transition: 'background-color 0.8s ease, color 0.5s ease',
+  transition: 'background-color 0.5s ease, color 0.5s ease',
 };
 
 export const viewButtonHover = {

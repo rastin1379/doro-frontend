@@ -10,6 +10,18 @@ import QuestionnairePage from './components/questionnaire/QuestionnairePage';
 import { Provider } from "react-redux";
 import { store } from './store/store';
 
+var hours = 2; 
+var now = new Date().getTime();
+var setupTime = localStorage.getItem('setupTime');
+if (setupTime == null) {
+    localStorage.setItem('setupTime', now)
+} else {
+    if(now-setupTime > hours*60*60*1000) {
+      localStorage.removeItem('categories');
+        localStorage.setItem('setupTime', now);
+    }
+}
+
 function App() {
   return (
     <Provider store={store}>

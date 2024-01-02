@@ -45,10 +45,19 @@ const AssessmentCategory = () => {
     const fetchCategories = async () => {
       try {
         setLoading(true)
+        // Check if categories are available in localStorage
+        const cachedCategories = localStorage.getItem('categories');
+        if (cachedCategories) {
+          setCategories(JSON.parse(cachedCategories));
+          setLoading(false);
+          return;
+        }
+
         const response = await axios.get("/ptests/");
         const data = response.data;
         const formattedCategories = formatCategories(data);
         setCategories(formattedCategories);
+        localStorage.setItem('categories', JSON.stringify(formattedCategories));
         setLoading(false)
       } catch (error) {
         console.error("Error fetching categories:", error);
