@@ -13,9 +13,8 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import "../../styles/getStartedPage.css";
 import Discord from "../../assets/icons/discord.svg";
-import { Button, Snackbar, IconButton } from "@mui/material";
+import { Snackbar, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { Padding } from "@mui/icons-material";
 
 // Your Firebase configuration
 const firebaseConfig = {
