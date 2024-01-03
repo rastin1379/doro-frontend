@@ -172,5 +172,17 @@ Footer {
     z-index: 2;
 }
 
-
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 2s forwards;
+}
+  
+@keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
 
