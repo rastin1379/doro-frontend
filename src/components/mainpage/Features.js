@@ -16,7 +16,7 @@ function Features() {
     const features = [
         {
             title: 'Engage Sessions',
-            description: 'Regular sessions for early vulnerability identification and intervention',
+            description: 'Regular sessions with Doro for early identification and intervention',
             img: sessionImg,
             style: feature1Styles
         },

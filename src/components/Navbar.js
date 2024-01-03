@@ -47,7 +47,7 @@ function Navbar() {
           component={Link}
           to={isLoggedIn ? "/doro-test-start" : "/get-started"} // Add Link to DORO Test Chat
         >
-          DORO Test
+          DORO
         </Button>
         <Button
           color="inherit"
