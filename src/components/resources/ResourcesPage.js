@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import TopSection from "./TopSection";
 import AssessmentCategory from "./AssessmentCategory";
 import Footer from "../Footer";
+import '../../styles/ResourcePage.css';
 
 function ResourcesPage() {
     useEffect(() => {
@@ -9,7 +10,7 @@ function ResourcesPage() {
     }, []);
 
   return (
-    <div className="mainpage">
+    <div className="mainpage fade-in">
       <TopSection />
       <AssessmentCategory />
       <Footer />

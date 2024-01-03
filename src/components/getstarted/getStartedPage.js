@@ -13,6 +13,8 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import "../../styles/getStartedPage.css";
 import Discord from "../../assets/icons/discord.svg";
+import { Snackbar, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 // Your Firebase configuration
 const firebaseConfig = {
@@ -33,10 +35,28 @@ function StartSection() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [snackBar, setSnackBar] = useState(false);
 
-  const handleRegisterClick = async () => {
+  const handleClose = () => {
+    setSnackBar(false);
+  };
+  const message = (
+    <div style={{padding:"5px 10px"}}>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </div>
+  );
+
+  const handleRegisterClick = async (prevState) => {
+    console.log("prevState=>",prevState)
     if (!email || !password) {
-      alert("Please enter both email and password.");
+      setSnackBar(true);
       return;
     }
 
@@ -70,7 +90,7 @@ function StartSection() {
   };
 
   return (
-    <div className="start-wrapper">
+    <div className="start-wrapper fade-in">
       <div className="start-section">
         <Navbar />
         <div className="start-content">
@@ -106,9 +126,19 @@ function StartSection() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="register-button" onClick={handleRegisterClick}>
-              REGISTER
-            </button>
+            <>
+              <button className="register-button" onClick={handleRegisterClick}>
+                REGISTER
+              </button>
+              <Snackbar
+                anchorOrigin={{ vertical:"top", horizontal:"center"}}
+                open={snackBar}
+                autoHideDuration={3000}
+                onClose={handleClose}
+                message="Please Enter Email and Password"
+                action={message}
+              />
+            </>
             <span className="google-signin">OR CONTINUE WITH GOOGLE</span>
             {/* Implement Google Sign-In here */}
             <button className="register-button">GOOGLE</button>

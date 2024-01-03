@@ -7,7 +7,7 @@ import avatar from "../../assets/icons/avatar.svg";
 function ProfileBeforeSession() {
   return (
     <>
-      <div className="profile-before-session">
+      <div className="profile-before-session fade-in">
         <Navbar />
 
         <div className="profile-section">

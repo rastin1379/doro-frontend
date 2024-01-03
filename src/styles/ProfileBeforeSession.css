@@ -102,3 +102,17 @@
   margin-bottom: 2%;
   color: #728094;
 }
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1400ms forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
