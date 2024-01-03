@@ -31,7 +31,7 @@ export const featureContainerStyles = {
 };
 
 export const featureBoxStyles = {
-  width: '22%',  // Reduced width for smaller boxes
+  width: '18%',  // Reduced width for smaller boxes
   backgroundColor: '#fff',
   borderRadius: '70px',
   boxShadow: '0 3px 6px rgba(0, 0, 0, 0.1)',

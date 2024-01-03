@@ -33,7 +33,7 @@ export const doroContainerStyles = {
 
 export const viewMoreButtonStyles = {
   display: 'block',
-  margin: '30px auto',  // top and bottom margin is 20px, auto will center the button
+  margin: '50px auto',  // top and bottom margin is 20px, auto will center the button
   padding: '10px 40px', // padding for the button
   backgroundColor: '#fff',
   color: '#728094', // text color

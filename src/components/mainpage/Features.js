@@ -15,20 +15,20 @@ import {
 function Features() {
     const features = [
         {
-            title: 'Complete the Session',
-            description: 'Be yourself and answer honestly to find out your personality type.',
+            title: 'Engage Sessions',
+            description: 'Regular sessions for early vulnerability identification and intervention',
             img: sessionImg,
             style: feature1Styles
         },
         {
-            title: 'View Detailed Results',
-            description: 'Learn how your personality type influences many areas of your life.',
+            title: 'Access Questionnaires',
+            description: 'Explore questionnaires to foster informed self-awareness',
             img: resultsImg,
             style: feature2Styles
         },
         {
-            title: 'Track the sessions',
-            description: 'Grow into the person you want to be with your optional Premium Suite.',
+            title: 'Track Health',
+            description: 'Monitor your mental well-being and seek guidance through Doro',
             img: trackImg,
             style: feature3Styles
         },
@@ -38,7 +38,15 @@ function Features() {
         <div style={featureContainerStyles}>
             {features.map((feature, index) => (
                 <Paper key={index} style={{...featureBoxStyles, ...feature.style}} elevation={3}>
-                    <Typography variant="h6" gutterBottom style={{fontWeight: 'bold'}}>
+                    <Typography
+                        variant="h6"
+                        gutterBottom
+                        style={{
+                            fontWeight: '500', // Set font weight to normal
+                            fontSize: '24px', // Set font size to 1.5rem
+                            textShadow: '2px 2px 4px rgba(0,0,0,0.2)', // Add text shadow
+                        }}
+                        >
                         {feature.title}
                     </Typography>
                     <img src={feature.img} alt={feature.title} style={featureBoxImgStyles} />
