@@ -13,7 +13,8 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import "../../styles/getStartedPage.css";
 import Discord from "../../assets/icons/discord.svg";
-import Google from "../../assets/icons/Googe.png"
+import Google from "../../assets/icons/Googe.png";
+import grayGoogle from "../../assets/icons/gray-google.webp";
 import { Snackbar, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -37,12 +38,13 @@ function StartSection() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [snackBar, setSnackBar] = useState(false);
+  const [hover, setHover] = useState(false);
 
   const handleClose = () => {
     setSnackBar(false);
   };
   const message = (
-    <div style={{padding:"5px 10px"}}>
+    <div style={{ padding: "5px 10px" }}>
       <IconButton
         size="small"
         aria-label="close"
@@ -55,7 +57,7 @@ function StartSection() {
   );
 
   const handleRegisterClick = async (prevState) => {
-    console.log("prevState=>",prevState)
+    console.log("prevState=>", prevState);
     if (!email || !password) {
       setSnackBar(true);
       return;
@@ -132,7 +134,7 @@ function StartSection() {
                 REGISTER
               </button>
               <Snackbar
-                anchorOrigin={{ vertical:"top", horizontal:"center"}}
+                anchorOrigin={{ vertical: "top", horizontal: "center" }}
                 open={snackBar}
                 autoHideDuration={3000}
                 onClose={handleClose}
@@ -147,10 +149,14 @@ function StartSection() {
             </div>
             {/* <span className="google-signin">OR CONTINUE WITH GOOGLE</span> */}
             {/* Implement Google Sign-In here */}
-            <button className="register-button">
+            <button
+              className="register-button"
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
+            >
               <div className="google-button">
-              <img src={Google} alt="Google"></img>
-              <span className="google-text">GOOGLE</span>
+                <img src={hover ? grayGoogle:Google} alt="Google" height={"16px"}></img>
+                <span style={{ marginTop: "2px" }}>GOOGLE</span>
               </div>
             </button>
             <div className="join-discord">

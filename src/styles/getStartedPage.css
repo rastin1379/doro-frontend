@@ -29,11 +29,10 @@
 .start-content {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    padding-left: 10rem;
+    padding-right: 4rem;
     align-items: flex-end;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 4%;
     gap: 2rem;
     flex-direction: column;
 }
@@ -59,7 +58,6 @@
     color: rgb(255, 255, 255);
     order: 1;
     margin-bottom: -5%;
-    margin-right: auto;
 }
 
 .text-content-start h1 {
@@ -111,6 +109,7 @@
     cursor: pointer;
     font-size: 14px;
     margin-right: 35%;
+    width: 44%;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -123,13 +122,14 @@
 
 .main-container {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 2px;
-    width: 90%;
+    width: 100%;
 }
 
 .line {
-    width: 90px;
+    width: 100px;
     height: 1px;
     background-color: white;
     margin: 0 10px;
@@ -155,11 +155,8 @@
 .google-button{
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.goggle-text{
-    margin-top: 6px;
+    justify-content: center;
+    gap: 8px;
 }
 
 .join-discord {
