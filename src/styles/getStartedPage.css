@@ -33,7 +33,7 @@
     align-items: flex-end;
     width: 100%;
     padding-left: 10%;
-    padding-right: 10%;
+    padding-right: 4%;
     gap: 2rem;
     flex-direction: column;
 }
@@ -125,6 +125,7 @@
     display: flex;
     align-items: center;
     gap: 2px;
+    width: 90%;
 }
 
 .line {
