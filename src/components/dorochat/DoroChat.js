@@ -137,7 +137,7 @@ function DoroChat() {
                   care.
                 </p>
                 <button onClick={handleAgree}>I AGREE</button>
-              </div>
+            </div>
             </div>
           </div>
         )}
