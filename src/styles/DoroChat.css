@@ -111,7 +111,7 @@
 
 .chat-input input {
   border: none;
-  width: calc(50% - 2em); /* Adjust width to subtract padding */
+  width: calc(42% - 2em); /* Adjust width to subtract padding */
   padding: 1em; /* Use em for padding */
   border-radius: 20px; /* Use pixels for border-radius */
   outline: none; /* Remove focus outline */
@@ -164,11 +164,11 @@
   padding: 40px 15px 40px 40px; /* Increased padding */
   border-radius: 20px; /* Larger border radius for rounded corners */
   text-align: left;
-  width: 45%; /* Adjust based on your preference */
+  /*width: 45%; /* Adjust based on your preference */
   max-width: 800px; /* Adjust based on your preference */
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for popup */
   overflow-y: auto; /* Add scrollbar if content is too tall */
-  max-height: 40vh; /* Set the maximum height relative to the viewport */
+  max-height: 60vh; /* Set the maximum height relative to the viewport */
   height: auto;
 }
 
@@ -218,6 +218,11 @@
   box-shadow: 0 15px 40px rgba(201, 212, 248, 0.5),
   inset 3px 1px 15px rgba(255, 255, 255, 0.5),
   inset 0 -3px 10px rgba(0, 0, 0, 0.37);
+}
+
+.blur{
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
 }
 
 .fade-in {

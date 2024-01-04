@@ -151,7 +151,7 @@ function DoroChat() {
               </div>
             ))}
           </div>
-          <div className="chat-input">
+          {!showTerms && <div className="chat-input">
             <input
               type="text"
               placeholder="Type a message..."
@@ -166,7 +166,7 @@ function DoroChat() {
               Send
             </Button>
             <Button style={{ padding: "10px 25px" }}>End</Button>
-          </div>
+          </div>}
         </div>
       </div>
     </>

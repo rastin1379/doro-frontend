@@ -13,6 +13,7 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import "../../styles/getStartedPage.css";
 import Discord from "../../assets/icons/discord.svg";
+import Google from "../../assets/icons/Googe.png"
 import { Snackbar, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -139,13 +140,23 @@ function StartSection() {
                 action={message}
               />
             </>
-            <span className="google-signin">OR CONTINUE WITH GOOGLE</span>
+            <div className="main-container">
+              <div className="line"></div>
+              <span className="signin">OR CONTINUE WITH GOOGLE</span>
+              <div className="line"></div>
+            </div>
+            {/* <span className="google-signin">OR CONTINUE WITH GOOGLE</span> */}
             {/* Implement Google Sign-In here */}
-            <button className="register-button">GOOGLE</button>
-            <span className="join-discord">
-              Join us on Discord
+            <button className="register-button">
+              <div className="google-button">
+              <img src={Google} alt="Google"></img>
+              <span className="google-text">GOOGLE</span>
+              </div>
+            </button>
+            <div className="join-discord">
+              <p className="text">Join us on Discord</p>
               <img src={Discord} alt="Discord" className="discord-icon" />
-            </span>
+            </div>
           </div>
         </div>
       </div>
