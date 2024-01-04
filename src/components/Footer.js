@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="image-background"></div>
       <div className="text-overlay">
-        <h2>© 2023 Doro, Inc. All Rights Reserved.</h2>
+        <h2>© 2023 Razroze, Inc. All Rights Reserved.</h2>
         <h3>
           Join us on Discord
           <img
