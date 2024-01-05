@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+import ReactMarkdown from "react-markdown";
 import "../../styles/QuestionnairePage.css";
 
 const QuestionnairePage = () => {
@@ -11,6 +12,7 @@ const QuestionnairePage = () => {
   const [answers, setAnswers] = useState({});
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchData = async () => {
       try {
         const response = await axios.get(`/ptests/${id}/info`);
@@ -64,40 +66,14 @@ const QuestionnairePage = () => {
   const instructionContent = (
     <>
       <p>
-        The AQ consists of 50 statements, giving you 4 choices for each
-        statement:
-      </p>
-      <p>
-        <ol>
-          <li>Definitely agree</li>
-          <li>Slightly agree</li>
-          <li>Slightly disagree</li>
-          <li>Definitely disagree</li>
-        </ol>
-      </p>
-      <p>
-        Note: it makes no difference to your score whether you choose slightly
-        or definitely, so treat the statements as a binary choice agree and
-        disagree.
-      </p>
-      <p>
-        If you decide to take the test, please consider the information under
-        the sections titled Outdated and Updated below.
+        <ReactMarkdown>{questionnaire?.instructions}</ReactMarkdown>
       </p>
     </>
   );
 
   const scoringContent = (
     <p>
-      <ul>
-        <li>Scoring range: 0–50</li>
-        <li>Threshold score: 26↑</li>
-        <li>Scores 26 or greater indicate you might be autistic</li>
-        <li>Lower scores mean you likely are not</li>
-        <li>79.3% of autistic people score 32 or higher</li>
-        <li>Most non-autistic males score 17 on average</li>
-        <li>Most non-autistic females score 15 on average</li>
-      </ul>
+      <ReactMarkdown>{questionnaire?.scoring}</ReactMarkdown>
     </p>
   );
 
