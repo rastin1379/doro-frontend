@@ -161,10 +161,10 @@ function DoroChat() {
                 }
               }}
             />
-            <Button style={{ padding: "10px 25px", marginRight: "10px" }}>
+            <Button style={{ padding: "10px 20px", marginRight: "10px" }}>
               Send
             </Button>
-            <Button style={{ padding: "10px 25px" }}>End</Button>
+            <Button style={{ padding: "10px 20px" }}>End</Button>
           </div>
         </div>
       </div>

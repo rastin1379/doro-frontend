@@ -77,7 +77,7 @@
 
 .chat-bubble {
   max-width: 40%;
-  font-size: 1em; /* Use em for font size */
+  font-size: 1.12em; /* Use em for font size */
   line-height: 1.4; /* Adjusted line height for readability */
   position: relative;
   margin-bottom: -1%; /* Use percentage for spacing between messages */
