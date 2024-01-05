@@ -91,13 +91,13 @@
 .chat-bubble.ai {
   align-self: center;
   margin-right: 30%;
-  color: #ffffffb2;
+  color: #ffffff;
 }
 
 .chat-bubble.user {
   align-self: center;
   margin-left: 30%;
-  color: #ffffff;
+  color: #ffffffb2;
 }
 
 .chat-input {
