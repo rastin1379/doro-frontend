@@ -118,7 +118,7 @@
   color: #fff; /* White text */
   background-color: #ffffff33; /* Dark background */
   margin-bottom: 4em;
-  margin-right: 2%;
+  margin-right: 10px;
 }
 
 .chat-input input::placeholder {
