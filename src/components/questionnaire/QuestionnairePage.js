@@ -44,6 +44,9 @@ const QuestionnairePage = () => {
   const basicInfoContent = questionnaire ? (
     <>
       <p>
+        <ReactMarkdown>{"Description: " + questionnaire?.description}</ReactMarkdown>
+      </p>
+      <p>
         Statements:<strong> {questionnaire.statements} </strong>
       </p>
       <p>
@@ -51,10 +54,6 @@ const QuestionnairePage = () => {
       </p>
       <p>
         Authors:<strong> {questionnaire.authors} </strong>
-      </p>
-      <p>
-        Description:
-        <strong> {questionnaire.description}</strong>
       </p>
       <p>
         Reference:
