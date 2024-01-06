@@ -3,18 +3,23 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+import ReactMarkdown from "react-markdown";
 import "../../styles/QuestionnairePage.css";
 
 const QuestionnairePage = () => {
   const { title, id } = useParams();
   const [questionnaire, setQuestionnaire] = useState(null);
+  const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchData = async () => {
       try {
         const response = await axios.get(`/ptests/${id}/info`);
         setQuestionnaire(response.data);
+        const questionsResponse = await axios.get(`/ptests/${id}/questions`);
+        setQuestions(questionsResponse.data);
       } catch (error) {
         console.error("Error fetching data: ", error);
       }
@@ -42,6 +47,11 @@ const QuestionnairePage = () => {
   const basicInfoContent = questionnaire ? (
     <>
       <p>
+        <ReactMarkdown>
+          {"Description: " + questionnaire?.description}
+        </ReactMarkdown>
+      </p>
+      <p>
         Statements:<strong> {questionnaire.statements} </strong>
       </p>
       <p>
@@ -49,10 +59,6 @@ const QuestionnairePage = () => {
       </p>
       <p>
         Authors:<strong> {questionnaire.authors} </strong>
-      </p>
-      <p>
-        Description:
-        <strong> {questionnaire.description}</strong>
       </p>
       <p>
         Reference:
@@ -64,150 +70,21 @@ const QuestionnairePage = () => {
   const instructionContent = (
     <>
       <p>
-        The AQ consists of 50 statements, giving you 4 choices for each
-        statement:
-      </p>
-      <p>
-        <ol>
-          <li>Definitely agree</li>
-          <li>Slightly agree</li>
-          <li>Slightly disagree</li>
-          <li>Definitely disagree</li>
-        </ol>
-      </p>
-      <p>
-        Note: it makes no difference to your score whether you choose slightly
-        or definitely, so treat the statements as a binary choice agree and
-        disagree.
-      </p>
-      <p>
-        If you decide to take the test, please consider the information under
-        the sections titled Outdated and Updated below.
+        <ReactMarkdown>{questionnaire?.instructions}</ReactMarkdown>
       </p>
     </>
   );
 
   const scoringContent = (
     <p>
-      <ul>
-        <li>Scoring range: 0–50</li>
-        <li>Threshold score: 26↑</li>
-        <li>Scores 26 or greater indicate you might be autistic</li>
-        <li>Lower scores mean you likely are not</li>
-        <li>79.3% of autistic people score 32 or higher</li>
-        <li>Most non-autistic males score 17 on average</li>
-        <li>Most non-autistic females score 15 on average</li>
-      </ul>
+      <ReactMarkdown>{questionnaire?.scoring}</ReactMarkdown>
     </p>
   );
 
-  const questionData = [
-    {
-      id: 1,
-      text: "1. I prefer to do things with others rather than on my own.",
-      options: [
-        "Definitely Agree",
-        "Slightly Agree",
-        "Slightly Disagree",
-        "Definitely Disagree",
-      ],
-    },
-    {
-      id: 2,
-      text: "2. I prefer to do things the same way over and over again.",
-      options: [
-        "Definitely Agree",
-        "Slightly Agree",
-        "Slightly Disagree",
-        "Definitely Disagree",
-      ],
-    },
-    {
-      id: 3,
-      text: "3. If I try to imagine something, I find it very easy to create a picture in my mind.",
-      options: [
-        "Definitely Agree",
-        "Slightly Agree",
-        "Slightly Disagree",
-        "Definitely Disagree",
-      ],
-    },
-    {
-      id: 4,
-      text: "4. I frequently get so strongly absorbed in one thing that I lose sight of other things.",
-      options: [
-        "Definitely Agree",
-        "Slightly Agree",
-        "Slightly Disagree",
-        "Definitely Disagree",
-      ],
-    },
-    {
-      id: 5,
-      text: "5. I often notice small sounds when others do not.",
-      options: [
-        "Definitely Agree",
-        "Slightly Agree",
-        "Slightly Disagree",
-        "Definitely Disagree",
-      ],
-    },
-    {
-      id: 6,
-      text: "6. I usually notice car number plates or similar strings of information.",
-      options: [
-        "Definitely Agree",
-        "Slightly Agree",
-        "Slightly Disagree",
-        "Definitely Disagree",
-      ],
-    },
-    {
-      id: 7,
-      text: "7. Other people frequently tell me that what I've said is impolite, even though I think it is polite.",
-      options: [
-        "Definitely Agree",
-        "Slightly Agree",
-        "Slightly Disagree",
-        "Definitely Disagree",
-      ],
-    },
-    {
-      id: 8,
-      text: "8. When I'm reading a story, I can easily imagine what the characters might look like.",
-      options: [
-        "Definitely Agree",
-        "Slightly Agree",
-        "Slightly Disagree",
-        "Definitely Disagree",
-      ],
-    },
-    {
-      id: 9,
-      text: "9. I am fascinated by dates.",
-      options: [
-        "Definitely Agree",
-        "Slightly Agree",
-        "Slightly Disagree",
-        "Definitely Disagree",
-      ],
-    },
-    {
-      id: 10,
-      text: "10. In a social group, I can easily keep track of several different people's conversations.",
-      options: [
-        "Definitely Agree",
-        "Slightly Agree",
-        "Slightly Disagree",
-        "Definitely Disagree",
-      ],
-    },
-  ];
-
-  const questionsContent = questionData.map((question) => (
+  const questionsContent = questions?.map((question) => (
     <div className="question" key={question.id}>
-      <p>{question.text}</p>
-      {question.options.map((option, index) => (
+      <p>{question.question_text}</p>
+      {question.answer_labels.map((option, index) => (
         <label key={index}>
           <input
             type="radio"
