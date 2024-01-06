@@ -19,11 +19,31 @@
     background-repeat: no-repeat;
     background-position: center top;
     display: flex;
-    justify-content: flex-start;
-    position: relative;
-    height: calc(100vh - 60px);
+    /* justify-content: flex-start;
+    position: relative; */
+    /* height: calc(100vh - 60px); */
+    height:90vh;
     align-items: flex-end;
     gap: 5%;
+}
+
+.section{
+    display: flex;
+    gap: 6rem;
+}
+
+.right-container{
+    width: 50%;
+    transform: translateY(-30%);
+}
+
+.right-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.left-container{
+    width: 50%;
 }
 
 .start-content {
@@ -45,19 +65,20 @@
 
 .chatDoro {
     width: 100%;
-    max-width: 650px;
+    max-width: 600px;
     position: absolute;
-    bottom: -10%; /* Adjust to move the image lower */
-    left: 3%;
+    bottom: -40%; /* Adjust to move the image lower */
+    left: 20%;
 }
 
 .text-content-start {
-    width: 40%;
-    position: relative;
+    width: 60%;
+    padding-left: 8rem;
+    /* position: relative; */
     flex: 1;
     color: rgb(255, 255, 255);
     order: 1;
-    margin-bottom: -5%;
+    margin-bottom: 16%;
 }
 
 .text-content-start h1 {
@@ -79,8 +100,7 @@
     border-radius: 5px;
     color: #ffffff;
     position: relative;
-    transform: translateY(-40%);
-    width: 40%;
+    transform: translateY(-30%);
 }
 
 .input-section label {
@@ -98,9 +118,14 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
 }
 
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
 .register-button {
-    display: block;
-    margin: 1% auto 3%;
+    /* display: block; */
+    /* margin: 1% auto 3%; */
     padding: 12px 80px;
     background-color: transparent !important;
     color: #ffffff;
@@ -108,8 +133,9 @@
     border-radius: 25px;
     cursor: pointer;
     font-size: 14px;
-    margin-right: 35%;
-    width: 44%;
+    /* margin-right: 35%; */
+    margin-right: 18%;
+    width: 45%;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -122,14 +148,17 @@
 
 .main-container {
     display: flex;
-    justify-content: flex-start;
+    width: 85%;
+    /* justify-content: flex-start; */
     align-items: center;
-    gap: 2px;
+    /* gap: 2px; */
+    gap: 20px;
+    /* margin-left: 20px; */
     width: 100%;
 }
 
 .line {
-    width: 100px;
+    width: 150px;
     height: 1px;
     background-color: white;
     margin: 0 10px;
@@ -137,6 +166,7 @@
 
 .signin {
     display: flex;
+    /* padding: 0px 20px; */
     align-items: center;
     font-size: 16px;
     margin-top: 1%;
