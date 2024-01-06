@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Button } from '@mui/material';
-import Navbar from '../Navbar';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchToken, selectAuthToken } from '../../store/slices/authSlice';
-import '../../styles/DoroChat.css';
+import React, { useState, useEffect, useRef } from "react";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import Navbar from "../Navbar";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchToken, selectAuthToken } from "../../store/slices/authSlice";
+import "../../styles/DoroChat.css";
 
 function DoroChat() {
   const [messages, setMessages] = useState([]);
   const dispatch = useDispatch();
   const [showTerms, setShowTerms] = useState(true);
   const websocket = useRef(null);
+  const lastMessageRef = useRef(null);
   const token = useSelector(selectAuthToken);
 
   useEffect(() => {
@@ -17,19 +19,22 @@ function DoroChat() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (token && (!websocket.current || websocket.current.readyState === WebSocket.CLOSED)) {
+    if (
+      token &&
+      (!websocket.current || websocket.current.readyState === WebSocket.CLOSED)
+    ) {
       websocket.current = new WebSocket(
         `wss://doro-backend-qqemuil3zq-uc.a.run.app/chat/ws?token=${token}`
       );
 
       websocket.current.onopen = () => {
-        console.log('WebSocket Connected');
+        console.log("WebSocket Connected");
         // Send an empty message to initiate the conversation
-        handleSendMessage('');
+        handleSendMessage("");
       };
 
       websocket.current.onerror = (error) => {
-        console.error('WebSocket Error: ', error);
+        console.error("WebSocket Error: ", error);
       };
 
       websocket.current.onclose = (event) => {
@@ -47,17 +52,20 @@ function DoroChat() {
   useEffect(() => {
     // Function to close WebSocket connection
     const closeWebSocket = () => {
-      if (websocket.current && websocket.current.readyState === WebSocket.OPEN) {
+      if (
+        websocket.current &&
+        websocket.current.readyState === WebSocket.OPEN
+      ) {
         websocket.current.close();
       }
     };
 
     // Add 'beforeunload' event listener to handle page close/navigate away
-    window.addEventListener('beforeunload', closeWebSocket);
+    window.addEventListener("beforeunload", closeWebSocket);
 
     return () => {
       // Remove event listener on component unmount
-      window.removeEventListener('beforeunload', closeWebSocket);
+      window.removeEventListener("beforeunload", closeWebSocket);
 
       // Close the WebSocket connection when the component unmounts
       closeWebSocket();
@@ -67,32 +75,54 @@ function DoroChat() {
   useEffect(() => {
     if (websocket.current) {
       websocket.current.onmessage = (event) => {
-        setMessages(messages => {
-          if (messages.length === 0 || messages[messages.length - 1].sender !== 'ai') {
-            return [...messages, { id: Date.now(), text: event.data, sender: 'ai' }];
+        setMessages((messages) => {
+          const newMessages =
+            messages.length >= 4 ? messages.slice(1) : [...messages];
+          if (
+            newMessages.length === 0 ||
+            newMessages[newMessages.length - 1].sender !== "ai"
+          ) {
+            return [
+              ...newMessages,
+              { id: Date.now(), text: event.data, sender: "ai" },
+            ];
           } else {
-            return messages.map((message, index) => {
-              if (index === messages.length - 1) {
+            return newMessages.map((message, index) => {
+              if (index === newMessages.length - 1) {
                 return { ...message, text: message.text + event.data };
               }
               return message;
             });
           }
         });
-      }
+      };
     }
   });
 
-  const handleSendMessage = (newMessage) => {
-    if (websocket.current && websocket.current.readyState === WebSocket.OPEN) {
-      websocket.current.send(newMessage);
-      if(newMessage !== '') {
-        setMessages(messages => [...messages, { id: Date.now(), text: newMessage, sender: 'user' }]);
-      }
-    } else {
-      console.log('WebSocket not connected');
+  useEffect(() => {
+    if (lastMessageRef.current) {
+      lastMessageRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }, [messages]);
+
+const handleSendMessage = (newMessage) => {
+  if (websocket.current && websocket.current.readyState === WebSocket.OPEN) {
+    websocket.current.send(newMessage);
+    if (newMessage !== "") {
+      setMessages((messages) => {
+        let newMessages =
+          messages.length >= 4 ? messages.slice(1) : [...messages];
+        return [
+          ...newMessages,
+          { id: Date.now(), text: newMessage, sender: "user" },
+        ];
+      });
+    }
+  } else {
+    console.log("WebSocket not connected");
+  }
+};
+
 
   const handleAgree = () => {
     setShowTerms(false); // Hide the terms popup and remove blur
@@ -136,7 +166,7 @@ function DoroChat() {
                   care.
                 </p>
                 <button onClick={handleAgree}>I AGREE</button>
-            </div>
+              </div>
             </div>
           </div>
         )}
@@ -144,11 +174,31 @@ function DoroChat() {
           <Navbar />
           <div className="animation-wrapper"></div>
           <div className="chat-section">
-            {sortedMessages.map((message) => (
-              <div key={message.id} className={`chat-bubble ${message.sender}`}>
-                {message.text}
-              </div>
-            ))}
+            {sortedMessages.map((message, index) => {
+
+              const totalMessages = sortedMessages.length;
+              let opacity = 1;
+              if (index === totalMessages - 2) {
+                opacity = 0.7;
+              } else if (index === totalMessages - 3) {
+                opacity = 0.4;
+              } else if (index === totalMessages - 4) {
+                opacity = 0.1;
+              }
+
+              return (
+                <div
+                  key={message.id}
+                  className={`chat-bubble ${message.sender}`}
+                  style={{ opacity: opacity }}
+                  ref={
+                    index === sortedMessages.length - 1 ? lastMessageRef : null
+                  }
+                >
+                  {message.text}
+                </div>
+              );
+            })}
           </div>
           <div className="chat-input">
             <input
@@ -161,10 +211,27 @@ function DoroChat() {
                 }
               }}
             />
-            <Button style={{ padding: "10px 20px", marginRight: "10px" }}>
-              Send
+            <Button
+              color="inherit"
+              className="buttonStyle"
+              variant="outlined"
+              sx={{
+                marginBottom: "4%",
+                padding: "10px 20px",
+                borderRadius: "20px",
+                color: "#484F59",
+                borderColor: "#D4DCE9",
+                backgroundColor: "#D4DCE9",
+                "&:hover, &:active": {
+                  backgroundColor: "transparent !important",
+                  color: "#CBD0DB !important",
+                },
+              }}
+              component={Link}
+              to="/profile"
+            >
+              End
             </Button>
-            <Button style={{ padding: "10px 20px" }}>End</Button>
           </div>
         </div>
       </div>
