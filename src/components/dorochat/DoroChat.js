@@ -200,7 +200,7 @@ const handleSendMessage = (newMessage) => {
               );
             })}
           </div>
-          <div className="chat-input">
+          {!showTerms && <div className="chat-input">
             <input
               type="text"
               placeholder="Type a message..."
@@ -232,7 +232,8 @@ const handleSendMessage = (newMessage) => {
             >
               End
             </Button>
-          </div>
+            <Button style={{ padding: "10px 20px" }}>End</Button>
+          </div>}
         </div>
       </div>
     </>

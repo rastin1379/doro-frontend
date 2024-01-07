@@ -13,6 +13,8 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import "../../styles/getStartedPage.css";
 import Discord from "../../assets/icons/discord.svg";
+import Google from "../../assets/icons/white-google.webp";
+import grayGoogle from "../../assets/icons/gray-google.webp";
 import { Snackbar, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -36,12 +38,13 @@ function StartSection() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [snackBar, setSnackBar] = useState(false);
+  const [hover, setHover] = useState(false);
 
   const handleClose = () => {
     setSnackBar(false);
   };
   const message = (
-    <div style={{padding:"5px 10px"}}>
+    <div style={{ padding: "5px 10px" }}>
       <IconButton
         size="small"
         aria-label="close"
@@ -54,7 +57,7 @@ function StartSection() {
   );
 
   const handleRegisterClick = async (prevState) => {
-    console.log("prevState=>",prevState)
+    console.log("prevState=>", prevState);
     if (!email || !password) {
       setSnackBar(true);
       return;
@@ -93,59 +96,85 @@ function StartSection() {
     <div className="start-wrapper fade-in">
       <div className="start-section">
         <Navbar />
-        <div className="start-content">
-          <div>
-            <div className="text-content-start">
-              <h1 style={{ fontWeight: "900" }}>Join the Journey</h1>
-              <p>
-                Discover a supportive space for self-awareness and early
-                intervention. Sign up to engage with Doro, access reliable
-                questionnaires, and track your mental state over time.
-              </p>
-            </div>
-            <div className="image-container">
-              <img
-                src={girlChattingImg}
-                alt="Girl chatting with bot"
-                className="chatDoro"
-              />
+        <div className="section">
+          <div className="right-container">
+            <div className="right-section">
+              <div className="text-content-start">
+                <h1 style={{ fontWeight: "900" }}>Join the Journey</h1>
+                <p>
+                  Discover a supportive space for self-awareness and early
+                  intervention. Sign up to engage with Doro, access reliable
+                  questionnaires, and track your mental state over time.
+                </p>
+              </div>
+              <div className="image-container">
+                <img
+                  src={girlChattingImg}
+                  alt="Girl chatting with bot"
+                  className="chatDoro"
+                />
+              </div>
             </div>
           </div>
-          <div className="input-section">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <>
-              <button className="register-button" onClick={handleRegisterClick}>
-                REGISTER
-              </button>
-              <Snackbar
-                anchorOrigin={{ vertical:"top", horizontal:"center"}}
-                open={snackBar}
-                autoHideDuration={3000}
-                onClose={handleClose}
-                message="Please Enter Email and Password"
-                action={message}
+          <div className="left-container">
+            <div className="input-section">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-            </>
-            <span className="google-signin">OR CONTINUE WITH GOOGLE</span>
-            {/* Implement Google Sign-In here */}
-            <button className="register-button">GOOGLE</button>
-            <span className="join-discord">
-              Join us on Discord
-              <img src={Discord} alt="Discord" className="discord-icon" />
-            </span>
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <div className="button-container">
+                <button
+                  className="register-button"
+                  onClick={handleRegisterClick}
+                >
+                  REGISTER
+                </button>
+                <Snackbar
+                  anchorOrigin={{ vertical: "top", horizontal: "center" }}
+                  open={snackBar}
+                  autoHideDuration={3000}
+                  onClose={handleClose}
+                  message="Please Enter Email and Password"
+                  action={message}
+                />
+              </div>
+              <div className="main-container">
+                <div className="line"></div>
+                <span className="signin">OR CONTINUE WITH GOOGLE</span>
+                <div className="line"></div>
+              </div>
+
+              <div className="button-container">
+                <button
+                  className="register-button"
+                  onMouseEnter={() => setHover(true)}
+                  onMouseLeave={() => setHover(false)}
+                >
+                  <div className="google-button">
+                    <img
+                      src={hover ? grayGoogle : Google}
+                      alt="Google"
+                      height={"16px"}
+                    ></img>
+                    <span style={{ marginTop: "2px" }}>GOOGLE</span>
+                  </div>
+                </button>
+              </div>
+              <div className="join-discord">
+                <p className="text">Join us on Discord</p>
+                <img src={Discord} alt="Discord" className="discord-icon" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
