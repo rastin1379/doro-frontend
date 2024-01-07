@@ -13,7 +13,7 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import "../../styles/getStartedPage.css";
 import Discord from "../../assets/icons/discord.svg";
-import Google from "../../assets/icons/Google.png";
+import Google from "../../assets/icons/white-google.webp";
 import grayGoogle from "../../assets/icons/gray-google.webp";
 import { Snackbar, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
