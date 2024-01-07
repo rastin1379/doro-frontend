@@ -25,21 +25,21 @@ const QuestionnairePage = () => {
     error,
     isError,
     isLoading,
-  } = useQuery(
-    ["questionnaire", id],
-    () => fetchQuestionnaireData(id),
-    {
-      staleTime: Infinity,
-      cacheTime: 0,
-      retry: false,
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-    }
-  );
+  } = useQuery(["questionnaire", id], () => fetchQuestionnaireData(id), {
+    staleTime: Infinity,
+    cacheTime: 0,
+    retry: false,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+  });
 
   // Handle loading state
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loader-container">
+        <div className="loader"></div>
+      </div>
+    );
   }
 
   // Handle error state

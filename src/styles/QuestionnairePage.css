@@ -18,19 +18,19 @@
 }
 
 .title-container {
-  padding-bottom: 5%; /* Space above the questionnaire section */
-  width: 25%; /* Full width */
-  text-align: center; /* Center the title text */
+  padding-bottom: 5%;
+  width: 25%;
+  text-align: center;
 }
 
 .navbar {
-  width: 100%; /* Full width */
-  position: absolute; /* Fixed position relative to the viewport */
+  width: 100%;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   background: linear-gradient(to bottom, #727b89, transparent) !important;
-  z-index: 1000; /* Ensure it's above other content */
+  z-index: 1000; 
 }
 
 .page-title {
@@ -42,45 +42,45 @@
   width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Horizontally center the content */
-  align-items: center; /* Vertically center the content */
-  padding: 5%; /* Padding around the questionnaire box */
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
   margin-top: -35%;
 }
 
 .questionnaire-box {
   background-color: white;
   padding: 1em;
-  border-radius: 15px; /* Smooth edges */
-  margin: 0 auto; /* Centered horizontally */
-  width: 50%; /* Adjust width as needed */
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 15px;
+  margin: 0 auto;
+  width: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   border: 2px solid #d4dce9;
-  flex-direction: column; /* Stack children vertically */
-  align-items: left; /* Ensure the contents inside the box are centered */
+  flex-direction: column;
+  align-items: left;
   margin-bottom: 5%;
   z-index: 2;
 }
 
 .basic-info-title {
-  text-align: center; /* Center the title text horizontally */
-  width: 100%; /* Ensure the title takes full width of its container */
+  text-align: center;
+  width: 100%;
   color: #728094;
 }
 
 .questionnaire-content {
-  margin-bottom: 1em; /* Space between content */
+  margin-bottom: 1em;
 }
 
 .questionnaire-content p {
-  margin: 0.5em 0; /* Margin for top and bottom of paragraph */
+  margin: 0.5em 0;
   line-height: 3;
   color: #728094;
 }
 
 .questionnaire-content strong {
-  font-weight: 600; /* Making the labels bold */
+  font-weight: 600;
 }
 
 .button {
@@ -94,7 +94,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Karla;
   font-size: 15px;
-  font-weight: 800; /* This makes the text bold */
+  font-weight: 800;
   line-height: 30px;
   letter-spacing: 0em;
   text-align: center;
@@ -117,7 +117,7 @@
 .take-test-card {
   position: relative;
   border-radius: 25px;
-  padding: 10px 30px; /* Adjusted padding */
+  padding: 10px 30px;
   width: 600px;
   height: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -154,18 +154,18 @@
 }
 
 .take-test-card h3 {
-  display: none; /* We hide the original h3 as we're using the ::before pseudo-element for the semicircle */
+  display: none;
 }
 
 .take-test-card p {
   font-size: 17px;
   margin-bottom: 10px;
   color: #728094;
-  line-height: 1.6; /* Normal line height for better readability */
-  padding: 0; /* No additional padding */
-  margin: 0; /* Remove any margins that may push the content outside the container */
-  width: auto; /* Default width to contain text within the parent */
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  box-sizing: border-box;
 }
 
 .question {
@@ -240,4 +240,25 @@ input[type="radio"]:checked:after {
   display: inline-block;
   visibility: visible;
   border: 1px solid #728094;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #728094;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
