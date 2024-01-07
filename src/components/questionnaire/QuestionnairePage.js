@@ -1,29 +1,51 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useQuery } from "react-query";
 import axios from "axios";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import ReactMarkdown from "react-markdown";
 import "../../styles/QuestionnairePage.css";
 
+const fetchQuestionnaireData = async (id) => {
+  const { data } = await axios.get(`/ptests/${id}/info`);
+  return data;
+};
+
 const QuestionnairePage = () => {
   const { title, id } = useParams();
-  const [questionnaire, setQuestionnaire] = useState(null);
   const [answers, setAnswers] = useState({});
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`/ptests/${id}/info`);
-        setQuestionnaire(response.data);
-      } catch (error) {
-        console.error("Error fetching data: ", error);
-      }
-    };
+  }, []);
 
-    fetchData();
-  }, [id]);
+  const {
+    data: questionnaire,
+    error,
+    isError,
+    isLoading,
+  } = useQuery(
+    ["questionnaire", id],
+    () => fetchQuestionnaireData(id),
+    {
+      staleTime: Infinity,
+      cacheTime: 0,
+      retry: false,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    }
+  );
+
+  // Handle loading state
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  // Handle error state
+  if (isError) {
+    return <div>Error: {error.message}</div>;
+  }
 
   const handleOptionChange = (questionId, answer) => {
     setAnswers((prevAnswers) => ({
